@@ -1,3 +1,14 @@
+@media all and (max-width: 720px) {
+	#full{min-width: 720px}
+	#sidebar{display: none;}
+	#menu{display: block;}
+}
+@media all and (min-width: 720px) {
+	#full{min-width: 1280px}
+	#menu{display: none;}
+}
+
+
 body {
 	margin: 0;
 	padding: 0;
@@ -17,7 +28,6 @@ a:hover {
 }
 
 #full {
-	min-width: 1280px;
 	background-color: black;
 }
 #sidebar {
