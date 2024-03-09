@@ -3,8 +3,8 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>1. 준비 - 한글 로마자 변환기</title>
 	<link rel="stylesheet" type="text/css" href="../../../style.css">
+	<title>1. 준비 - 한글 로마자 변환기</title>
 </head>
 
 <body>
@@ -38,9 +38,45 @@
 		<div id="main">
 			<div id="main-text">
 				<h1>한글 로마자 변환기</h1>
-				<h2>1. 준비</h2><hr>
+				<h2>1. 준비</h2>
+				<hr>
 
-				<p>1번입니다.</p>
+				<p id="last-date">최근 수정: 2024-03-10 03:02</p>
+
+				<h3>시작하기 전에</h3>
+				<p>한글 로마자 변환기를 만들어 보겠습니다.</p>
+				<p>페이지 이름 변환하는 데에 쓰기 위해서, 그리고 개인적인 흥미(한국어와 한글에 관심이 많습니다.)를 이유로 만들게 되었습니다.</p>
+
+				<h3>한글과 유니코드의 표현</h3>
+				<p>우선 C언어에서 한글이 어떤 식으로 표현되는지 알아보겠습니다.</p>
+				<p>한글은 utf-8로 인코딩하였을 때 3 바이트입니다. 그래서 배열에 한글을 저장할 때에는 배열의 크기를 3*n+1 바이트(n은 글자 수, +1은 널문자)로 선언하면 됩니다.
+				locale.h 헤더에 선언된 wchar_t 자료형을 사용해도 되지만 번거로운 부분이 많기에 이 글에서는 사용하지 않겠습니다.</p>
+
+				<div class="code-frame">
+					<div class="codebox">
+						<span class="prepro">#include</span> <span class="str">&lt;stdio.h&gt;</span>
+						<br><br><br>
+						<span class="type">int</span> <span>main</span><span class="paren">(</span><span class="type">void</span><span class="paren">)</span> <span class="paren">{</span>
+						<br>
+						<span class="type">&emsp;char</span> <span class="var">hello</span><span class="paren">[</span><span>16</span><span class="paren">]</span> <span>=</span> <span class="str">"안녕하세요"</span><span>;</span>
+						<br>
+						<span>&emsp;printf</span><span class="paren">(</span><span class="str">"</span><span class="var">%s</span><span class="str">"</span><span>,</span> <span class="var">hello</span><span class="paren">)</span><span>;</span>
+						<br><br>
+						<span class="prepro">&emsp;return</span> <span>0</span><span>;</span>
+						<br>
+						<span class="paren">}</span>
+					</div>
+				</div>
+
+				<p>대강 이런 식으로 코드를 짜고 실행해보면</p>
+
+				<div class="code-frame">
+					<div class="codebox">
+						<span>안녕하세요</span>
+					</div>
+				</div>
+
+				<p>이렇게 출력이 됩니다.</p>
 			</div>
 		</div>
 	</div>

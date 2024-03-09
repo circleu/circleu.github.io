@@ -1,3 +1,8 @@
+@font-face {
+	font-family: 'd2c';
+	src: url(D2Coding.ttf);
+}
+
 @media screen and (min-width: 1280px) {
 	#sidebar {
 		width: 25vw;
@@ -37,23 +42,26 @@ body {
 h1 {
 	margin: 0;
 }
+h3 {
+	margin-top: 32px;
+}
 a {
-	color: white;
+	color: #fff;
 	text-decoration: none;
 }
 a:hover {
-	color: skyblue;
+	color: #8ff;
 }
 
 #sidebar {
 	overflow: auto;
 
-	background-color: #212121;
+	background-color: #222;
 }
 #sidebar-text {
 	padding: 2vw;
 
-	color: white;
+	color: #fff;
 }
 #main-frame {
 	height: 100vh;
@@ -63,4 +71,37 @@ a:hover {
 }
 #main-text {
 	padding: 2vw;
+}
+#last-date {
+	color: #222;
+	font-size: 14px;
+}
+
+.codebox {
+	padding: 16px;
+	overflow: auto;
+	color: #fff;
+	font-family: d2c;
+}
+.code-frame {
+	background-color: #222;
+}
+.code {
+	margin: 0;
+}
+
+.str {
+	color: #f84;
+}
+.prepro {
+	color: #f8f;
+}
+.type {
+	color: #88f;
+}
+.paren {
+	color: #ff8;
+}
+.var {
+	color: #8ff;
 }
