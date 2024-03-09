@@ -14,13 +14,13 @@
 }
 @media screen and (max-width: 1280px) {
 	#sidebar {
-		width: 100vw;
+		width: none;
 		height: 75vh;
 		float: none;
 	}
 	#main-frame {
 		margin-left: 0;
-		width: 100vw;
+		width: none;
 	}
 	#main {
 		padding: 0;
@@ -30,8 +30,6 @@
 body {
 	margin: 0;
 	padding: 0;
-	min-width: 1280px;
-	min-height: 720px;
 
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 16px;
