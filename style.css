@@ -5,25 +5,27 @@
 
 @media screen and (min-width: 1280px) {
 	#sidebar {
-		width: 25vw;
+		position: fixed;
+		width: 25%;
 		height: 100vh;
 		float: left;
 	}
-	#main-frame {
-		margin-left: 25vw;
-		width: 75vw;
+	#main-body {
+		margin-left: 25%;
+		width: 75%;
 	}
 	#main {
-		padding: 0 15vw;
+		padding: 0 20%;
 	}
 }
 @media screen and (max-width: 1280px) {
 	#sidebar {
+		position: none;
 		width: none;
 		height: 75vh;
 		float: none;
 	}
-	#main-frame {
+	#main-body {
 		margin-left: 0;
 		width: none;
 	}
@@ -35,7 +37,6 @@
 body {
 	margin: 0;
 	padding: 0;
-
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 16px;
 }
@@ -46,48 +47,84 @@ h3 {
 	margin-top: 32px;
 }
 a {
-	color: #fff;
 	text-decoration: none;
+	color: #fff;
 }
 a:hover {
 	color: #8ff;
 }
+table, td {
+	border: 1px solid #fff;
+	border-collapse: collapse;
+}
+table {
+	width: 100%;
+}
+td {
+	padding: 8px;
+	text-align: center;
+	color: white;
+}
 
 #sidebar {
 	overflow: auto;
-
 	background-color: #222;
 }
 #sidebar-text {
-	padding: 2vw;
-
+	padding: 5%;
 	color: #fff;
 }
-#main-frame {
+#main-body {
 	height: 100vh;
 }
-#main {
-	width: 960;
-}
 #main-text {
-	padding: 2vw;
+	padding: 5%;
 }
 #last-date {
-	color: #222;
 	font-size: 14px;
+	color: #222;
+}
+#bottombar {
+	width: 100%;
+	min-height: 8%;
+	background-color: #222;
+}
+#bottombar-text {
+	padding: 1%;
+	color: #fff;
 }
 
 .codebox {
 	padding: 16px;
 	overflow: auto;
-	color: #fff;
 	font-family: d2c;
+	color: #fff;
 }
-.code-frame {
+.code-body {
 	background-color: #222;
 }
 .code {
 	margin: 0;
+}
+.index:hover {
+	background-color: #444;
+}
+.code-line {
+	height: 16px;
+}
+.code-line:hover {
+	background-color: #444;
+}
+.table-body {
+	padding: 16px;
+	overflow: auto;
+	background-color: #222;
+}
+.link {
+	color: #000;
+}
+.link:hover {
+	color: #22f;
 }
 
 .str {
@@ -100,8 +137,11 @@ a:hover {
 	color: #88f;
 }
 .paren {
-	color: #ff8;
+	color: #ff0;
 }
 .var {
 	color: #8ff;
+}
+.esc {
+	color: #ff8;
 }

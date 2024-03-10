@@ -13,19 +13,19 @@
 			<h1>메뉴</h1><hr>
 
 			<ul>
-				<li><a href="../../../index.html">메인</a></li>
+				<li class="index"><a href="../../../index.html">메인</a></li>
 			</ul>
-			
+
 			<ul>
-				<li>개발</li>
+				<li class="index">개발</li>
 				<details open>
-					<summary>C언어</summary>
+					<summary class="index">C언어</summary>
 					<ul>
 						<details open>
-							<summary>한글 로마자 변환기</summary>
+							<summary class="index">한글 로마자 변환기</summary>
 							<ul>
-								<li><a href="00.html">1. 준비</a></li>
-								<li><a href="01.html">2. 만들기</a></li>
+								<li class="index"><a href="00.html">1. 준비</a></li>
+								<li class="index"><a href="01.html">2. 만들기</a></li>
 							</ul>
 						</details>
 					</ul>	
@@ -34,49 +34,197 @@
 		</div>
 	</div>
 
-	<div id="main-frame">
+	<div id="main-body">
 		<div id="main">
 			<div id="main-text">
 				<h1>한글 로마자 변환기</h1>
 				<h2>1. 준비</h2>
 				<hr>
 
-				<p id="last-date">최근 수정: 2024-03-10 03:02</p>
+				<p id="last-date">최근 수정: 2024-03-10 23:13</p>
 
 				<h3>시작하기 전에</h3>
 				<p>한글 로마자 변환기를 만들어 보겠습니다.</p>
 				<p>페이지 이름 변환하는 데에 쓰기 위해서, 그리고 개인적인 흥미(한국어와 한글에 관심이 많습니다.)를 이유로 만들게 되었습니다.</p>
+				<p>이 글에서는 변환기를 만들기 전에 알아야 할 것들을 간략하게 살펴보겠습니다.</p>
 
-				<h3>한글과 유니코드의 표현</h3>
-				<p>우선 C언어에서 한글이 어떤 식으로 표현되는지 알아보겠습니다.</p>
+				<h3>한글을 로마자로 표기하는 방법</h3>
+				<p>현재 대한민국에서 사용 중인 한글 로마자 표기법은 '국어의 로마자 표기법'입니다.
+				이것 외에도 매큔-라이샤워 표기법, 예일 표기법 등의 다양한 표기법이 존재하지만,
+				그것들은 나중에 구현해 보고 일단 국어의 로마자 표기법부터 구현해 보도록 하겠습니다.</p>
+				<p>국어의 로마자 표기법에서는 한글을 아래와 같은 규칙을 따라 로마자로 표기합니다:</p>
+				
+				<div class="table-body">
+					<table>
+						<tr>
+							<td colspan="20">자음</td>
+						</tr>
+						<tr>
+							<td>한글</td>
+							<td>ㄱ</td>
+							<td>ㄲ</td>
+							<td>ㄴ</td>
+							<td>ㄷ</td>
+							<td>ㄸ</td>
+							<td>ㄹ</td>
+							<td>ㅁ</td>
+							<td>ㅂ</td>
+							<td>ㅃ</td>
+							<td>ㅅ</td>
+							<td>ㅆ</td>
+							<td>ㅇ</td>
+							<td>ㅈ</td>
+							<td>ㅉ</td>
+							<td>ㅊ</td>
+							<td>ㅋ</td>
+							<td>ㅌ</td>
+							<td>ㅍ</td>
+							<td>ㅎ</td>
+						</tr>
+						<tr>
+							<td>로마자</td>
+							<td>g/k</td>
+							<td>kk</td>
+							<td>n</td>
+							<td>d/t</td>
+							<td>tt</td>
+							<td>r/l</td>
+							<td>m</td>
+							<td>b/p</td>
+							<td>pp</td>
+							<td>s</td>
+							<td>ss</td>
+							<td>ng</td>
+							<td>j</td>
+							<td>jj</td>
+							<td>ch</td>
+							<td>k</td>
+							<td>t</td>
+							<td>p</td>
+							<td>h</td>
+						</tr>
+					</table>
+
+					<table>
+						<tr>
+							<td colspan="22">모음</td>
+						</tr>
+						<tr>
+							<td>한글</td>
+							<td>ㅏ</td>
+							<td>ㅐ</td>
+							<td>ㅑ</td>
+							<td>ㅒ</td>
+							<td>ㅓ</td>
+							<td>ㅔ</td>
+							<td>ㅕ</td>
+							<td>ㅖ</td>
+							<td>ㅗ</td>
+							<td>ㅘ</td>
+							<td>ㅙ</td>
+							<td>ㅚ</td>
+							<td>ㅛ</td>
+							<td>ㅜ</td>
+							<td>ㅝ</td>
+							<td>ㅞ</td>
+							<td>ㅟ</td>
+							<td>ㅠ</td>
+							<td>ㅡ</td>
+							<td>ㅢ</td>
+							<td>ㅣ</td>
+						</tr>
+						<tr>
+							<td>로마자</td>
+							<td>a</td>
+							<td>ae</td>
+							<td>ya</td>
+							<td>yae</td>
+							<td>eo</td>
+							<td>e</td>
+							<td>yeo</td>
+							<td>ye</td>
+							<td>o</td>
+							<td>wa</td>
+							<td>wae</td>
+							<td>oe</td>
+							<td>yo</td>
+							<td>u</td>
+							<td>weo</td>
+							<td>we</td>
+							<td>wi</td>
+							<td>yu</td>
+							<td>eu</td>
+							<td>ui</td>
+							<td>i</td>
+						</tr>
+					</table>
+				</div>
+
+				<p>이외에도 발음 변화를 반영하기 위한 규칙들이 여럿 있습니다. 그것들은 나중에 변환기를 만들면서 알아보도록 하겠습니다.</p>
+
+				<h3>한글 표현</h3>
 				<p>한글은 utf-8로 인코딩하였을 때 3 바이트입니다. 그래서 배열에 한글을 저장할 때에는 배열의 크기를 3*n+1 바이트(n은 글자 수, +1은 널문자)로 선언하면 됩니다.
 				locale.h 헤더에 선언된 wchar_t 자료형을 사용해도 되지만 번거로운 부분이 많기에 이 글에서는 사용하지 않겠습니다.</p>
 
-				<div class="code-frame">
+				<div class="code-body">
 					<div class="codebox">
-						<span class="prepro">#include</span> <span class="str">&lt;stdio.h&gt;</span>
-						<br><br><br>
-						<span class="type">int</span> <span>main</span><span class="paren">(</span><span class="type">void</span><span class="paren">)</span> <span class="paren">{</span>
-						<br>
-						<span class="type">&emsp;char</span> <span class="var">hello</span><span class="paren">[</span><span>16</span><span class="paren">]</span> <span>=</span> <span class="str">"안녕하세요"</span><span>;</span>
-						<br>
-						<span>&emsp;printf</span><span class="paren">(</span><span class="str">"</span><span class="var">%s</span><span class="str">"</span><span>,</span> <span class="var">hello</span><span class="paren">)</span><span>;</span>
-						<br><br>
-						<span class="prepro">&emsp;return</span> <span>0</span><span>;</span>
-						<br>
-						<span class="paren">}</span>
+						<div class="code-line">
+							<span class="type">char</span>
+							<span class="var">hello</span><span class="paren">[</span>16<span class="paren">]</span>
+							=
+							<span class="str">"안녕하세요"</span>;
+						</div>
+						<div class="code-line"></div>
+						<div class="code-line">
+							printf<span class="paren">(</span><span class="str">"</span><span class="var">%s</span><span class="str">"</span>,
+							<span class="var">hello</span><span class="paren">)</span>;
+						</div>
 					</div>
 				</div>
 
-				<p>대강 이런 식으로 코드를 짜고 실행해보면</p>
+				<p>이런 식으로 코드를 짜고 실행해보면</p>
 
-				<div class="code-frame">
+				<div class="code-body">
 					<div class="codebox">
-						<span>안녕하세요</span>
+						안녕하세요
 					</div>
 				</div>
 
 				<p>이렇게 출력이 됩니다.</p>
+
+				<h3>유니코드 표현</h3>
+				<p>유니코드를 표현할 때는 \u를 사용하면 됩니다.</p>
+
+				<div class="code-body">
+					<div class="codebox">
+						<div class="code-line">
+							printf<span class="paren">(</span><span class="str">"</span><span class="esc">\uAC00</span><span class="str">"</span><span class="paren">)</span>;
+						</div>
+					</div>
+				</div>
+
+				<p>이런 식으로 코드를 짜고 실행하면</p>
+
+				<div class="code-body">
+					<div class="codebox">
+						가
+					</div>
+				</div>
+
+				<p>이렇게 출력이 됩니다. (AC00은 '가'의 유니코드 번호입니다.)</p>
+
+				<h3>유니코드에서의 한글 순서</h3>
+				<p>유니코드에는 일정한 순서대로 조합된 한글이 나열되어 있습니다.</p>
+				<p>초성은 ㄱ, ㄲ, ㄴ, ㄷ, ㄸ, ㄹ, ㅁ, ㅂ, ㅃ, ㅅ, ㅆ, ㅇ, ㅈ, ㅉ, ㅊ, ㅋ, ㅌ, ㅍ, ㅎ 순으로 (19자),
+				중성은 ㅏ, ㅐ, ㅑ, ㅒ, ㅓ, ㅔ, ㅕ, ㅖ, ㅗ, ㅘ, ㅙ, ㅚ, ㅛ, ㅜ, ㅝ, ㅞ, ㅟ, ㅠ, ㅡ, ㅢ, ㅣ 순으로 (21자),
+				종성은 x, ㄱ, ㄲ, ㄳ, ㄴ, ㄵ, ㄶ, ㄷ, ㄹ, ㄺ, ㄻ, ㄼ, ㄽ, ㄾ, ㄿ, ㅀ, ㅁ, ㅂ, ㅄ, ㅅ, ㅆ, ㅇ, ㅈ, ㅊ, ㅋ, ㅌ, ㅍ, ㅎ 순으로 (28자) 조합되어 있습니다.</p>
+				<p>그래서 유니코드 표를 보면 가, 각, 갂, 갃... ...힠, 힡, 힢, 힣과 같이 나열되어 있는 것을 볼 수 있습니다.</p>
+
+				<h3>마치며</h3>
+				<p>이 글에서는 변환기를 만들기 전 필요한 내용들을 간략하게 알아봤습니다.</p>
+				<p>다음 글에서는 직접 변환기를 만들어 보도록 하겠습니다.</p>
+
+				<hr>
 			</div>
 		</div>
 	</div>
