@@ -9,39 +9,7 @@
 
 <body>
 	<div id="sidebar">
-		<div id="sidebar-text">
-			<h1>메뉴</h1><hr>
-
-			<ul>
-				<li class="index"><a href="../../../index.html">메인</a></li>
-			</ul>
-
-			<ul>
-				<li class="index">개발</li>
-				<details open>
-					<summary class="index">C언어</summary>
-					<ul>
-						<details open>
-							<summary class="index">한글 로마자 변환기</summary>
-							<ul>
-								<li class="index"><a href="00.html">1. 준비</a></li>
-								<li class="index"><a href="01.html">2. 만들기</a></li>
-							</ul>
-						</details>
-					</ul>	
-				</details>
-			</ul>
-
-			<ul>
-				<li class="index">독서</li>
-				<details>
-					<summary class="index">한 권으로 읽는 컴퓨터 구조와 프로그래밍</summary>
-					<ul>
-						<li class="index"><a href="../han-gweoneuro-ingneun-keompyuteo-gujowa-peurogeuraeming/00.html">0. 읽기 전에</a></li>
-					</ul>
-				</details>
-			</ul>
-		</div>
+		<div include-html="../../../include/menu.html"></div>
 	</div>
 
 	<div id="main-body">
@@ -59,6 +27,8 @@
 			</div>
 		</div>
 	</div>
+
+	<script src="include.js"></script>
 </body>
 
 </html>
