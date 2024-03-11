@@ -9,29 +9,7 @@
 
 <body>
 	<div id="sidebar">
-		<div id="sidebar-text">
-			<h1>메뉴</h1><hr>
-
-			<ul>
-				<li class="index"><a href="index.html">메인</a></li>
-			</ul>
-
-			<ul>
-				<li class="index">개발</li>
-				<details>
-					<summary class="index">C언어</summary>
-					<ul>
-						<details>
-							<summary class="index">한글 로마자 변환기</summary>
-							<ul>
-								<li class="index"><a href="./pages/2024-03/hangeul-romaja-byeonhwangi/00.html">1. 준비</a></li>
-								<li class="index"><a href="./pages/2024-03/hangeul-romaja-byeonhwangi/01.html">2. 만들기</a></li>
-							</ul>
-						</details>
-					</ul>	
-				</details>
-			</ul>
-		</div>
+		<div include-html="./include/menu.html"></div>
 	</div>
 
 	<div id="main-body">
@@ -57,6 +35,8 @@
 			</div>
 		</div>
 	</div>
+
+	<script src="include.js"></script>
 </body>
 
 </html>
