@@ -93,6 +93,9 @@ td {
 	padding: 1%;
 	color: #fff;
 }
+#bottomline {
+	margin-bottom: 10vh;
+}
 
 .codebox {
 	padding: 16px;
@@ -133,7 +136,7 @@ td {
 .str {
 	color: #f84;
 }
-.prepro {
+.keyword {
 	color: #f8f;
 }
 .type {
@@ -150,4 +153,7 @@ td {
 }
 .comment {
 	color: #484;
+}
+.stype {
+	color: #4f8;
 }

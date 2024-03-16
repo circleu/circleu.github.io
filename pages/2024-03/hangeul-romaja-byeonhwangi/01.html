@@ -85,10 +85,6 @@
 							=
 							<span class="var">encodedText</span>.hex<span class="paren">(</span><span class="str">" "</span><span class="paren">)</span>.split<span class="paren">(</span><span class="str">" "</span><span class="paren">)</span>
 						</div>
-						<div class="code-line"></div>
-						<div class="code-line">
-							print<span class="paren">(</span><span class="var">encodedText</span><span class="paren">)</span>
-						</div>
 
 						<div class="code-out">
 							>>>
@@ -96,9 +92,31 @@
 						</div>
 					</div>
 				</div>
+				<p>그다음 for 문과 bin 함수를 사용하여 리스트의 요소를 하나씩 이진수로 변환합니다.</p>
+				<div class="code-body">
+					<div class="codebox">
+						<div class="code-line">
+							<span class="keyword">for</span>
+							<span class="var">i</span>
+							<span class="keyword">in</span>
+							range<span class="paren">(</span>len<span class="paren">(</span><span class="var">encodedText</span><span class="paren">)</span><span class="paren">)</span>:
+						</div>
+						<div class="code-line">
+							&nbsp;&nbsp;&nbsp;&nbsp;<span class="var">encodedText</span><span class="paren">[</span><span class="var">i</span><span class="paren">]</span>
+							=
+							bin<span class="paren">(</span>int<span class="paren">(</span><span class="var">encodedText</span><span class="paren">[</span><span class="var">i</span><span class="paren">]</span>,
+							16<span class="paren">)</span><span class="paren">)</span><span class="paren">[</span>2:<span class="paren">]</span>
+							<span class="comment"># 슬라이싱은 접두어를 없애기 위함입니다.</span>
+						</div>
 
+						<div class="code-out">
+							>>>
+							['11101100', '10010101', '10001000', '11101011', '10000101', '10010101', '11101101', '10010101', '10011000', '11101100', '10000100', '10111000', '11101100', '10011010', '10010100', '101110']
+						</div>
+					</div>
+				</div>
 
-				<hr>
+				<hr id="bottomline">
 			</div>
 		</div>
 	</div>
