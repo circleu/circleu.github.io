@@ -43,7 +43,7 @@ body {
 h1 {
 	margin: 0;
 }
-h3 {
+h2, h3, h4 {
 	margin-top: 32px;
 }
 a {
@@ -115,6 +115,9 @@ td {
 .code-line:hover {
 	background-color: #444;
 }
+.code-out {
+	margin-top: 32px;
+}
 .table-body {
 	padding: 16px;
 	overflow: auto;
@@ -144,4 +147,7 @@ td {
 }
 .esc {
 	color: #ff8;
+}
+.comment {
+	color: #080;
 }
