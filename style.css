@@ -113,6 +113,7 @@ td {
 	background-color: #444;
 }
 .code-line {
+	padding: 4px 0;
 	height: 16px;
 }
 .code-line:hover {
@@ -131,6 +132,9 @@ td {
 }
 .link:hover {
 	color: #22f;
+}
+.tab {
+	margin: 0;
 }
 
 .str {

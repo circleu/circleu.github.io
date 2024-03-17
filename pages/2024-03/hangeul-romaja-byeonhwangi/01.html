@@ -4,6 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="/style.css?after">
+	<link rel="icon" type="images/png" href="/logo.png">
 	<title>2. 만들기 - 한글 로마자 변환기</title>
 </head>
 
@@ -19,7 +20,7 @@
 				<h2>2. 만들기</h2>
 				<hr>
 
-				<p id="last-date">최근 수정: 2024-03-16 21:30</p>
+				<p id="last-date">최근 수정: 2024-03-17 18:09</p>
 
 				<h3>계획</h3>
 				<p>만들기 전에 프로그램을 어떤 식으로 짤 지 구상해 봅시다.</p>
@@ -51,67 +52,6 @@
 						<div class="code-out">
 							>>>
 							안녕하세요.
-						</div>
-					</div>
-				</div>
-				<p>이런 식으로 출력이 됩니다.</p>
-
-				<h4>utf-8로 변환하기</h4>
-				<p>encode 메소드를 사용하면 문자를 인코딩할 수 있습니다.</p>
-				<div class="code-body">
-					<div class="codebox">
-						<div class="code-line">
-							<span class="var">encodedText</span>
-							=
-							<span class="var">text</span>.encode<span class="paren">(</span><span class="var">encoding</span>=<span class="str">"utf-8"</span><span class="paren">)</span>
-						</div>
-						<div class="code-line"></div>
-						<div class="code-line">
-							print<span class="paren">(</span><span class="var">encodedText</span><span class="paren">)</span>
-						</div>
-
-						<div class="code-out">
-							>>>
-							b'\xec\x95\x88\xeb\x85\x95\xed\x95\x98\xec\x84\xb8\xec\x9a\x94.'
-						</div>
-					</div>
-				</div>
-				<p>이렇게 출력이 됩니다.</p>
-				<p>그리고 hex 메소드를 사용하여 바이트 문자열을 문자열로 변환하고 split 메소드를 사용하여 리스트로 만듭니다.</p>
-				<div class="code-body">
-					<div class="codebox">
-						<div class="code-line">
-							<span class="var">encodedText</span>
-							=
-							<span class="var">encodedText</span>.hex<span class="paren">(</span><span class="str">" "</span><span class="paren">)</span>.split<span class="paren">(</span><span class="str">" "</span><span class="paren">)</span>
-						</div>
-
-						<div class="code-out">
-							>>>
-							['ec', '95', '88', 'eb', '85', '95', 'ed', '95', '98', 'ec', '84', 'b8', 'ec', '9a', '94', '2e']
-						</div>
-					</div>
-				</div>
-				<p>그다음 for 문과 bin 함수를 사용하여 리스트의 요소를 하나씩 이진수로 변환합니다.</p>
-				<div class="code-body">
-					<div class="codebox">
-						<div class="code-line">
-							<span class="keyword">for</span>
-							<span class="var">i</span>
-							<span class="keyword">in</span>
-							range<span class="paren">(</span>len<span class="paren">(</span><span class="var">encodedText</span><span class="paren">)</span><span class="paren">)</span>:
-						</div>
-						<div class="code-line">
-							&nbsp;&nbsp;&nbsp;&nbsp;<span class="var">encodedText</span><span class="paren">[</span><span class="var">i</span><span class="paren">]</span>
-							=
-							bin<span class="paren">(</span>int<span class="paren">(</span><span class="var">encodedText</span><span class="paren">[</span><span class="var">i</span><span class="paren">]</span>,
-							16<span class="paren">)</span><span class="paren">)</span><span class="paren">[</span>2:<span class="paren">]</span>
-							<span class="comment"># 슬라이싱은 접두어를 없애기 위함입니다.</span>
-						</div>
-
-						<div class="code-out">
-							>>>
-							['11101100', '10010101', '10001000', '11101011', '10000101', '10010101', '11101101', '10010101', '10011000', '11101100', '10000100', '10111000', '11101100', '10011010', '10010100', '101110']
 						</div>
 					</div>
 				</div>
