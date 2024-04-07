@@ -1,9 +1,4 @@
-import Main from './siteData'
-import HangulRomacaPyenhwanki from './pages/hangul-romaca-pyenhwanki/siteData'
+import Main from './pages/main/siteData';
+import HangulRomacaPyenhwanki from './pages/hangul-romaca-pyenhwanki/siteData';
 
-const page = {
-    M: Main,
-    HRP: HangulRomacaPyenhwanki
-}
-
-export default page
+export {Main, HangulRomacaPyenhwanki};
