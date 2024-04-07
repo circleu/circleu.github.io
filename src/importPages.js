@@ -1,5 +1,6 @@
-import Main from './pages/main/siteData';
-import HangulRomacaPyenhwanki from './pages/hangul-romaca-pyenhwanki/siteData';
-import _404 from './pages/404/siteData';
+import Main from './pages/main/pageData';
+import PythonHighlighter from './pages/python-highlighter/pageData';
+import HangulRomanizer from './pages/hangul-romanizer/pageData';
+import _404 from './pages/404/pageData';
 
-export {Main, HangulRomacaPyenhwanki, _404};
+export {Main, PythonHighlighter, HangulRomanizer, _404};

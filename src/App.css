@@ -86,3 +86,34 @@ a {
 .link:hover {
 	color: #22f;
 }
+
+.codeblock-body {
+	background-color: #222;
+}
+.codeblock-text {
+	padding: 16px;
+	font-family: 'd2c';
+	color: #fff;
+}
+
+.code-magenta {
+	color: #f8f;
+}
+.code-blue {
+	color: #48f;
+}
+.code-yellow {
+	color: #ff0;
+}
+.code-lightyellow {
+	color: #ffc;
+}
+.code-lightgreen {
+	color: #cfc;
+}
+.code-orange {
+	color: #f84;
+}
+.code-cyan {
+	color: #8ff;
+}

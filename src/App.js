@@ -4,7 +4,7 @@ import { HashRouter, Routes, Route } from 'react-router-dom';
 import Sidebar from './elements/Sidebar';
 
 import {
-  Main, HangulRomacaPyenhwanki, _404
+  Main, PythonHighlighter, HangulRomanizer, _404
 }
 from './importPages';
 
@@ -16,7 +16,8 @@ function App() {
         <Sidebar />
         <Routes>
           <Route path='/' element={<Main />}></Route>
-          <Route path='/hangul-romaca-pyenhwanki' element={<HangulRomacaPyenhwanki />}></Route>
+          <Route path='/python-highlighter' element={<PythonHighlighter />}></Route>
+          <Route path='/hangul-romanizer' element={<HangulRomanizer />}></Route>
           <Route path='*' element={<_404 />}></Route>
         </Routes>
       </HashRouter>
