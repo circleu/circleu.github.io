@@ -1,10 +1,10 @@
 import './App.css?after';
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import Sidebar from './elements/Sidebar';
 
 import {
-  Main, HangulRomacaPyenhwanki
+  Main, HangulRomacaPyenhwanki, _404
 }
 from './importPages';
 
@@ -12,13 +12,14 @@ from './importPages';
 function App() {
   return (
     <div>
-      <BrowserRouter>
+      <HashRouter>
         <Sidebar />
         <Routes>
           <Route path='/' element={<Main />}></Route>
           <Route path='/hangul-romaca-pyenhwanki' element={<HangulRomacaPyenhwanki />}></Route>
+          <Route path='*' element={<_404 />}></Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
