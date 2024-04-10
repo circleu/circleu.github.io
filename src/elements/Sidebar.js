@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Sidebar() {
   return (
-    <div id='Sidebar'>
+    <div id='Sidebar-body'>
       <div id='Sidebar-text'>
       <h1>메뉴</h1>
       <hr></hr>

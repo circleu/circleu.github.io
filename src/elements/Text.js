@@ -3,7 +3,7 @@ import React from "react"
 function Text({title, lastdate, content}) {
   return (
     <div id='Main-body'>
-      <div id='Main'>
+      <div id='Main-frame'>
         <div id='Main-text'>
         <h1>{title}</h1>
         <hr></hr>
