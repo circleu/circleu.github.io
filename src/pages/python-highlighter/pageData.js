@@ -3,7 +3,7 @@ import Text from "../../elements/Text";
 
 const pageData = {
   'title': '파이썬 하이라이터',
-  'lastdate': '2024-04-08 02:16',
+  'lastdate': '2024-04-10 19:27',
   'content': (
     <div>
       <h3>개요</h3>
