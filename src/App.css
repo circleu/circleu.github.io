@@ -1,5 +1,5 @@
 @font-face {
-	font-family: 'd2c';
+	font-family: "d2c";
 	src: url(./D2Coding.ttf);
 }
 @media screen and (min-width: 1280px) {
@@ -92,7 +92,7 @@ a {
 }
 .codeblock-text {
 	padding: 16px;
-	font-family: 'd2c';
+	font-family: "d2c";
 	color: #fff;
 }
 
@@ -100,7 +100,7 @@ a {
 	color: #f8f;
 }
 .code-blue {
-	color: #48c;
+	color: #48f;
 }
 .code-yellow {
 	color: #ff0;
@@ -116,4 +116,7 @@ a {
 }
 .code-cyan {
 	color: #8ff;
+}
+.code-green {
+	color: #482;
 }

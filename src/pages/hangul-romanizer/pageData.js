@@ -2,9 +2,9 @@ import React from "react";
 import Text from "../../elements/Text";
 
 const pageData = {
-  'title': '한글 로마자 변환기',
-  'lastdate': '2024-04-07 13:00',
-  'content': (
+  "title": "한글 로마자 변환기",
+  "lastdate": "2024-04-07 13:00",
+  "content": (
     <div>
       <h2>1. 준비</h2>
 
