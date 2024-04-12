@@ -1,9 +1,10 @@
 import React from "react";
 import Text from "../../elements/Text";
+import githubLogo from "./github-logo.png"
 
 const pageData = {
   "title": "메인",
-  "lastdate": "2024-03-17 01:30",
+  "lastdate": "2024-04-12 23:26",
   "content": (
     <div>
       <h3>사이트에 대해</h3>
@@ -15,7 +16,7 @@ const pageData = {
       <p>C, 파이썬은 프로그램을 만들며 공부 중이고, 자바스크립트는 이 사이트를 만들며 공부 중입니다.</p>
       
       <h3>외부 링크</h3>
-      <p>Github: <a className="link" href="https://github.com/circleu">https://github.com/circleu</a></p>
+      <img className="exlink-img" src={githubLogo}></img><p className="exlink-text">Github: <a className="link" href="https://github.com/circleu">https://github.com/circleu</a></p>
     </div>
   )
 }
