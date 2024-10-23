@@ -9,11 +9,12 @@ const pageData = {
     <div>
       <h3>사이트에 대해</h3>
       <p>그냥 이것저것 만들어 보며 공부한 것을 올리는 곳입니다.</p>
-      <p>아직 프로그래밍을 배운 지 얼마 되지 않아 그르거나, 비효율적이거나 가독성이 떨어지는 코드들이 많을 겁니다.</p>
+      <p>그르거나, 비효율적이거나 가독성이 떨어지는 코드들이 있을 수 있습니다.</p>
 
-      <h3>나에 대해</h3>
-      <p>현재 C, 파이썬, 자바스크립트를 공부 중입니다.</p>
-      <p>C, 파이썬은 프로그램을 만들며 공부 중이고, 자바스크립트는 이 사이트를 만들며 공부 중입니다.</p>
+      <h3>본인에 대해</h3>
+      <p>현재 운영체제를 공부 중입니다.</p>
+      <p>덕분에 C를 진득하게 배우게 됐네요(...)</p>
+      <p>UEFI를 사용한 x86_64 운영체제를 개발하려 하는 중입니다. UEFI만 해도 내용이 참 많아서 열심히 정리 중입니다.</p>
       
       <h3>외부 링크</h3>
       <img className="exlink-img" src={githubLogo}></img><p className="exlink-text">Github: <a className="link" href="https://github.com/circleu">https://github.com/circleu</a></p>

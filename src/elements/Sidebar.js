@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import FolderIndex from "./FolderIndex";
 
 function Sidebar() {
   return (
@@ -13,16 +14,18 @@ function Sidebar() {
       </ul>
       <ul>
         <li className="index">개발</li>
-        <details open>
-          <summary className="index">C</summary>
-        </details>
-        <details open>
-          <summary className="index">파이썬</summary>
-          <ul>
-            <li className="index"><Link className="index-button" to="/python-highlighter">파이썬 하이라이터</Link></li>
-            <li className="index"><Link className="index-button" to="/hangul-romanizer">한글 로마자 변환기</Link></li>
-          </ul>
-        </details>
+
+        <FolderIndex name={"C"} content={
+          <FolderIndex name={"운영체제"} content = {
+            <FolderIndex name={"UEFI를 사용한 64비트 운영체제"} content={
+              <ul><li className="index"><Link className="index-button" to="/operating-system/64-bit-os-using-uefi/0">0. 들어가며</Link></li></ul>
+            } />
+          } />
+        } />
+        
+        <FolderIndex name={"Python"} content={
+          <div></div>
+        } />
       </ul>
       </div>
     </div>

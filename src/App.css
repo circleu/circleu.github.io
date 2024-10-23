@@ -80,6 +80,9 @@ a {
 .index-button:hover {
   color: #8ff;
 }
+.content-collapsed {
+	display: none;
+}
 .link {
 	color: #000;
 }

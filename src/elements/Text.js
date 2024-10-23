@@ -16,5 +16,4 @@ function Text({title, lastdate, content}) {
     </div>
   );
 }
-
 export default Text;
