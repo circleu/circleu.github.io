@@ -18,7 +18,7 @@ function CollapseExpandIndex(name) {
 function FolderIndex({name, content}) {
   return (
     <ul>
-      <li className="index" onClick={() => CollapseExpandIndex(name)}>{name}</li>
+      <li className="index-foldable" onClick={() => CollapseExpandIndex(name)}>{name}</li>
       <div className="content-collapsed" name={name}>{content}</div>
     </ul>
   );

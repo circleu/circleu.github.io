@@ -70,7 +70,10 @@ a {
 	color: #222;
 }
 
-.index:hover {
+.index-foldable {
+	list-style-type: symbols("L");
+}
+.index:hover, .index-foldable:hover {
 	background-color: #444;
 }
 .index-button {
