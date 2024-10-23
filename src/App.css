@@ -48,6 +48,10 @@ h2, h3, h4 {
 a {
 	text-decoration: none;
 }
+ul {
+	padding-inline-start: 16px;
+	list-style-type: disc;
+}
 
 #Sidebar-body {
   overflow: auto;
@@ -70,10 +74,10 @@ a {
 	color: #222;
 }
 
-.index-foldable {
-	list-style-type: symbols("L");
+.index {
+	padding: 8px;
 }
-.index:hover, .index-foldable:hover {
+.index:hover {
 	background-color: #444;
 }
 .index-button {
@@ -82,6 +86,13 @@ a {
 }
 .index-button:hover {
   color: #8ff;
+}
+.index-foldable {
+	padding: 8px;
+	list-style-type: symbols("L");
+}
+.index-foldable:hover {
+	background-color: #444;
 }
 .content-collapsed {
 	display: none;
