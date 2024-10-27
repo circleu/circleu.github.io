@@ -14,7 +14,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Pages.Main />}></Route>
           <Route path="*" element={<Pages._404 />}></Route>
-          <Route path="/operating-system/64-bit-os-using-uefi/0" element={<Pages._64BitOSUsingUEFI0 />}></Route>
+          <Route path="/c/operating-system/64-bit-os-using-uefi/0" element={<Pages._64BitOSUsingUEFI0 />}></Route>
+          <Route path="/c/tools/c-code-highlighter" element={<Pages.CCodeHighlighter />}></Route>
         </Routes>
       </BrowserRouter>
     </div>

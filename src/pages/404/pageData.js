@@ -3,7 +3,8 @@ import Text from "../../elements/Text";
 
 const pageData = {
   "title": "페이지를 찾을 수 없습니다.",
-  "lastdate": "404-NotFound",
+  "createdate": "404-Not-Found",
+  "editdate": "404-Not-Found",
   "content": (
     <div>
       <h3>페이지를 찾을 수 없습니다.</h3>
@@ -14,7 +15,7 @@ const pageData = {
 
 function _404() {
   return (
-    <Text title={pageData.title} lastdate={pageData.lastdate} content={pageData.content} />
+    <Text title={pageData.title} createdate={pageData.createdate} editdate={pageData.editdate} content={pageData.content} />
   );
 }
 

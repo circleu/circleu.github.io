@@ -1,6 +1,6 @@
 import React from "react"
 
-function Text({title, lastdate, content}) {
+function Text({title, createdate, editdate, content}) {
   return (
     <div id="Main-body">
       <div id="Main-frame">
@@ -8,7 +8,8 @@ function Text({title, lastdate, content}) {
         <h1>{title}</h1>
         <hr></hr>
 
-        <p id="Lastdate">최근 수정: {lastdate}</p>
+        <p id="date">생성 일자: {createdate}</p>
+        <p id="date">수정 일자: {editdate}</p>
         {content}
         <hr></hr>
         </div>

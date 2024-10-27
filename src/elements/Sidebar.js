@@ -16,11 +16,17 @@ function Sidebar() {
         <li className="index">개발</li>
 
         <FolderIndex name={"C"} content={
-          <FolderIndex name={"운영체제"} content = {
-            <FolderIndex name={"UEFI를 사용한 64비트 운영체제"} content={
-              <ul><li className="index"><Link className="index-button" to="/operating-system/64-bit-os-using-uefi/0">0. 들어가며</Link></li></ul>
+          <div>
+            <FolderIndex name={"운영체제"} content = {
+              <FolderIndex name={"UEFI를 사용한 64비트 운영체제"} content={
+                <ul><li className="index"><Link className="index-button" to="c/operating-system/64-bit-os-using-uefi/0">0. 들어가며</Link></li></ul>
+              } />
             } />
-          } />
+
+            <FolderIndex name={"도구"} content = {
+              <ul><li className="index"><Link className="index-button" to="c/tools/c-code-highlighter">C 코드 하이라이터</Link></li></ul>
+            } />
+          </div>
         } />
         
         <FolderIndex name={"Python"} content={

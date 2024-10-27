@@ -14,14 +14,9 @@
     <title>circleu.</title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <p>redirecting...</p>
   </body>
   <script type="text/javascript">
-    const parsed = String(window.location).split("?");
-    
-    if (parsed.length > 1) {
-      history.pushState(null, null, parsed[1]);
-    }
+    window.location.replace("/?" + window.location.pathname);
   </script>
 </html>

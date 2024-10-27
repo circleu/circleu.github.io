@@ -1,10 +1,11 @@
 import React from "react";
 import Text from "../../elements/Text";
-import githubLogo from "./github-logo.png"
+import GithubLink from "../../elements/GithubLink";
 
 const pageData = {
   "title": "메인",
-  "lastdate": "2024-04-12 23:26",
+  "createdate": "2024-04-06 22:49",
+  "editdate": "2024-04-12 23:26",
   "content": (
     <div>
       <h3>사이트에 대해</h3>
@@ -17,14 +18,14 @@ const pageData = {
       <p>UEFI를 사용한 x86_64 운영체제를 개발하려 하는 중입니다. UEFI만 해도 내용이 참 많아서 열심히 정리 중입니다.</p>
       
       <h3>외부 링크</h3>
-      <img className="exlink-img" src={githubLogo}></img><p className="exlink-text">Github: <a className="link" href="https://github.com/circleu">https://github.com/circleu</a></p>
+      <GithubLink text="https://github.com/circleu" link="https://github.com/circleu"/>
     </div>
   )
 }
 
 function Main() {
   return (
-    <Text title={pageData.title} lastdate={pageData.lastdate} content={pageData.content} />
+    <Text title={pageData.title} createdate={pageData.createdate} editdate={pageData.editdate} content={pageData.content} />
   );
 }
 
