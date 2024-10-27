@@ -137,6 +137,9 @@ ul {
 .code-blue {
 	color: #48f;
 }
+.code-purple {
+	color: #88f;
+}
 .code-yellow {
 	color: #ff0;
 }
@@ -157,4 +160,10 @@ ul {
 }
 .code-white {
 	color: #fff;
+}
+.code-gray {
+	color: #888;
+}
+.code-red {
+	color: #f44;
 }
