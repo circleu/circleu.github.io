@@ -19,7 +19,10 @@ function Sidebar() {
           <div>
             <FolderIndex name={"운영체제"} content = {
               <FolderIndex name={"UEFI를 사용한 64비트 운영체제"} content={
+                <div>
                 <ul><li className="index"><Link className="index-button" to="c/operating-system/64-bit-os-using-uefi/0">0. 들어가며</Link></li></ul>
+                <ul><li className="index"><Link className="index-button" to="c/operating-system/64-bit-os-using-uefi/1">1. 환경 설정 및 간단한 코드 작성</Link></li></ul>
+                </div>
               } />
             } />
 

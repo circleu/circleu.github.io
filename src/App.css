@@ -121,12 +121,19 @@ ul {
 }
 
 .codeblock-body {
-	background-color: #222;
+	background-color: #444;
 }
 .codeblock-text {
 	padding: 16px;
 	white-space: pre;
 	overflow: scroll;
+	font-family: "d2c";
+	color: #fff;
+}
+
+.codeline {
+	padding: 0px 4px;
+	background-color: #444;
 	font-family: "d2c";
 	color: #fff;
 }
