@@ -8,8 +8,7 @@ const pageData = {
   "content": (
     <div>
       <h3>환경 설정</h3>
-      <p>UEFI는 일종의 개발 환경이기 때문에 사용하려면 설정을 해 줘야 합니다.</p>
-      <p>이 글에서는 챕터 0에서 말했다시피, <b>GNU-EFI</b>를 사용합니다. <a className="link" href="https://sourceforge.net/projects/gnu-efi/files/">SourceForge</a>에서 다운 받으시거나 아래 명령을 입력하여 리포지토리를 복제할 수 있습니다:</p>
+      <p>이 글에서는 챕터 0에서 말했다시피 개발 환경으로 <b>GNU-EFI</b>를 사용합니다. <a className="link" href="https://sourceforge.net/projects/gnu-efi/files/">SourceForge</a>에서 다운 받으시거나 아래 명령을 입력하여 리포지토리를 복제할 수 있습니다:</p>
       <div className="codeblock-body">
         <div className="codeblock-text">
           git clone https://git.code.sf.net/p/gnu-efi/code gnu-efi
@@ -19,7 +18,7 @@ const pageData = {
       <p>다운로드가 완료되면 해당 위치로 이동한 다음 터미널에 <span className="codeline">make</span>를 입력하여 컴파일합니다.</p>
       <p>컴파일이 완료된 <b>gnu-efi</b> 폴더를 원하는 위치로 옮기면 환경 설정 끝입니다.</p>
 
-      <h3>코드 작성 및 설명</h3>
+      <h3>코드 작성</h3>
       <p>환경 설정이 완료되었으니 'Hello, World!'를 출력하는 간단한 코드 작성을 해 봅시다.</p>
       <p><b>main.c</b> 파일을 만들어 아래와 같이 작성합니다:</p>
       <div className="codeblock-body">
@@ -46,6 +45,10 @@ const pageData = {
       <p>
         <span className="codeline">{"#include <efilib.h>"}</span>
         는 GNU-EFI에서 제공하는 라이브러리 함수를 가져오겠다는 뜻입니다.
+        GNU-EFI는 <span className="codeline">{"Print"}</span>, <span className="codeline">{"LibOpenFile"}</span>
+        과 같은 함수들을 제공합니다.
+        이를 이용하여 코드를 더 간편하게 작성할 수 있습니다. <span className="codeline">{"Print"}</span> 함수를 정석적으로 작성하려면, <span className="codeline">{"SystemTable->ConOut->OutputString(ConOut, L\"Hello, World!\")"}</span>
+        와 같이 코드가 길어집니다 (...)
       </p>
       <p>
         <span className="codeline">{"EFI_STATUS EFIAPI..."}</span> 부분은 <span className="codeline">{"efi_main"}</span> 함수를 정의하는 부분입니다.
