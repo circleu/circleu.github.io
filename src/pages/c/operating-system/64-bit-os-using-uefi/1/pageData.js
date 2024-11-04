@@ -4,14 +4,14 @@ import Text from "../../../../../elements/Text";
 const pageData = {
   "title": "UEFI를 사용한 64비트 운영체제 - 1. 환경 설정 및 간단한 코드 작성",
   "createdate": "2024-11-02 10:00",
-  "editdate": "2024-11-03 02:11",
+  "editdate": "2024-11-04 22:56",
   "content": (
     <div>
       <h3>환경 설정</h3>
       <p>이 글에서는 챕터 0에서 말했다시피 개발 환경으로 <b>GNU-EFI</b>를 사용합니다. <a className="link" href="https://sourceforge.net/projects/gnu-efi/files/">SourceForge</a>에서 다운 받으시거나 아래 명령을 입력하여 리포지토리를 복제할 수 있습니다:</p>
       <div className="codeblock-body">
         <div className="codeblock-text">
-          git clone https://git.code.sf.net/p/gnu-efi/code gnu-efi
+          {"git clone https://git.code.sf.net/p/gnu-efi/code gnu-efi"}
         </div>
       </div>
 
@@ -20,7 +20,7 @@ const pageData = {
 
       <h3>코드 작성</h3>
       <p>환경 설정이 완료되었으니 'Hello, World!'를 출력하는 간단한 코드 작성을 해 봅시다.</p>
-      <p><b>main.c</b> 파일을 만들어 아래와 같이 작성합니다:</p>
+      <p>src 디렉토리를 만들고 안에 <b>main.c</b> 파일을 만들어 아래와 같이 작성합니다:</p>
       <div className="codeblock-body">
         <div className="codeblock-text">
         <div>
@@ -41,13 +41,10 @@ const pageData = {
         </div>
       </div>
 
-      <p>코드 설명을 해보겠습니다:</p>
       <p>
         <span className="codeline">{"#include <efilib.h>"}</span>
-        는 GNU-EFI에서 제공하는 라이브러리 함수를 가져오겠다는 뜻입니다.
-        GNU-EFI는 <span className="codeline">{"Print"}</span>, <span className="codeline">{"LibOpenFile"}</span>
-        과 같은 함수들을 제공합니다.
-        이를 이용하여 코드를 더 간편하게 작성할 수 있습니다. <span className="codeline">{"Print"}</span> 함수를 정석적으로 작성하려면, <span className="codeline">{"SystemTable->ConOut->OutputString(ConOut, L\"Hello, World!\")"}</span>
+        는 라이브러리 함수를 가져오겠다는 뜻입니다. <span className="codeline">{"Print"}</span>도 라이브러리 함수 중에 하나입니다.
+        라이브러리 함수를 이용하면 코드를 더 간편하게 작성할 수 있습니다. <span className="codeline">{"Print"}</span> 함수 없이 문자열을 출력하려면, <span className="codeline">{"SystemTable->ConOut->OutputString(ConOut, L\"Hello, World!\")"}</span>
         와 같이 코드가 길어집니다 (...)
       </p>
       <p>
@@ -78,14 +75,66 @@ const pageData = {
         를 반환합니다.
       </p>
 
-      <h3>코드 실행</h3>
+      <h3>컴파일 및 실행</h3>
       <p>
-        코드를 작성하였으니 이제 코드를 실행 해봅시다.
-        컴파일 작업에는 gcc, Makefile, GNU Linker가 필요합니다.
-        그리고 컴파일한 파일을 디스크에 기록하기 위해 디스크 이미지 생성 프로그램, 파티션 관리 프로그램 등이 필요합니다.
-        이 글에서는 <span className="codeline">{"dd"}</span> 명령과 GNU Parted를 사용합니다.
-        또한 컴파일된 코드 실행을 위해 가상 머신이 필요합니다.
-        이 글에서는 QEMU를 사용합니다.
+        코드를 작성하였으니 이제 컴파일 해봅시다.
+        tmp와 result 디렉토리를 만듭니다.
+        그리고 Makefile 파일을 만들어 아래와 같이 작성합니다:
+      </p>
+      <div className="codeblock-body">
+        <div className="codeblock-text">
+        {"CC = gcc"}<br></br>
+        {"CFLAGS = -Ignu-efi/inc -fpic -ffreestanding -fno-stack-protector -fno-stack-check -fshort-wchar -mno-red-zone -maccumulate-outgoing-args"}<br></br>
+        {"LFLAGS = -shared -Bsymbolic -Lgnu-efi/x86_64/lib -Lgnu-efi/x86_64/gnuefi -Tgnu-efi/gnuefi/elf_x86_64_efi.lds gnu-efi/x86_64/gnuefi/crt0-efi-x86_64.o"}<br></br>
+        {"OFLAGS = -j .text -j .sdata -j .data -j .rodata -j .dynamic -j .dynsym  -j .rel -j .rela -j .rel.* -j .rela.* -j .reloc --target efi-app-x86_64 --subsystem=10"}<br></br>
+        <br></br>
+        <br></br>
+        {"result/BOOTX64.EFI : tmp/boot.so"}<br></br>
+        &nbsp;&nbsp;{"objcopy $(OFLAGS) $^ $@"}<br></br>
+        <br></br>
+        {"tmp/boot.so : tmp/boot.o"}<br></br>
+        &nbsp;&nbsp;{"ld $(LFLAGS) $< -o $@ -lgnuefi -lefi"}<br></br>
+        <br></br>
+        {"tmp/boot.o : src/boot.c"}<br></br>
+        &nbsp;&nbsp;{"$(CC) $(CFLAGS) -c $< -o $@"}<br></br>
+        <br></br>
+        {"clean:"}<br></br>
+        &nbsp;&nbsp;{"rm tmp/*.o tmp/*.so result/*.EFI"}
+        </div>
+      </div>
+
+      <p>
+        (코드 설명)
+      </p>
+
+      <p>
+        컴파일을 완료했으면 이제 디스크 이미지 파일을 만든 다음, 컴파일된 EFI 파일을 옮기고 실행하면 됩니다.
+        mkdisk.sh 파일을 만들고 아래와 같이 작성합니다:
+      </p>
+      <div className="codeblock-body">
+        <div className="codeblock-text">
+          {"#!/bin/sh"}<br></br>
+          <br></br>
+          {"dd if=/dev/zero of=disk.img bs=512 count=4194304"}<br></br>
+          {"parted disk.img -s -a minimal mklabel gpt"}<br></br>
+          {"parted disk.img -s -a minimal mkpart EFI FAT32 2048s 1048575s"}<br></br>
+          {"parted disk.img -s -a minimal toggle 1 boot"}<br></br>
+          <br></br>
+          {"parted disk.img -s -a minimal mkpart primary FAT32 1048576s 2097151s"}
+        </div>
+      </div>
+
+      <p>
+        <span className="codeline">{"dd"}</span> 명령을 이용하여 디스크 이미지 파일을 만듭니다.
+        bs는 섹터 당 바이트, count는 섹터 개수입니다.
+        따라서 우리는 512*4194304 바이트 = 2 기가바이트 크기의 디스크 이미지 파일을 만들게 됩니다.
+      </p>
+      <p>
+        그리고 GNU Parted를 이용하여 디스크 이미지에 파티션을 생성합니다.
+        GPT 테이블을 생성하고 2048번째 섹터부터 1048575섹터까지를 FAT32로 포맷된 EFI 시스템 파티션으로 지정합니다.
+        따라서 우리는 1046528개의 섹터, 즉 511 메가바이트 크기의 파티션을 생성하게 됩니다.
+        그리고 1048576번째 섹터 부터 끝까지를 FAT32로 포맷된 주 파티션으로 설정합니다.
+        따라서 우리는 1048576개의 섹터, 즉 512 메가바이트 크기의 파티션을 생성하게 됩니다.
       </p>
     </div>
   )
