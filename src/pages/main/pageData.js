@@ -4,8 +4,8 @@ import GithubLink from "../../elements/GithubLink";
 
 const pageData = {
   "title": "메인",
-  "createdate": "2024-04-06 22:49",
-  "editdate": "2024-04-12 23:26",
+  "createdate": "2024-04-06",
+  "editdate": "2024-04-12",
   "content": (
     <div>
       <h3>사이트에 대해</h3>

@@ -4,8 +4,8 @@ import GithubLink from "../../../../../elements/GithubLink";
 
 const pageData = {
   "title": "UEFI를 사용한 64비트 운영체제 - 0. 들어가며",
-  "createdate": "2024-10-23 23:48",
-  "editdate": "2024-11-03 18:57",
+  "createdate": "2024-10-23",
+  "editdate": "2024-11-03",
   "content": (
     <div>
       <h3>들어가는 글</h3>

@@ -3,8 +3,8 @@ import Text from "../../../../../elements/Text";
 
 const pageData = {
   "title": "UEFI를 사용한 64비트 운영체제 - 1. 환경 설정 및 간단한 코드 작성",
-  "createdate": "2024-11-02 10:00",
-  "editdate": "2024-11-04 22:56",
+  "createdate": "2024-11-02",
+  "editdate": "2024-11-04",
   "content": (
     <div>
       <h3>환경 설정</h3>
@@ -23,21 +23,21 @@ const pageData = {
       <p>src 디렉토리를 만들고 안에 <b>main.c</b> 파일을 만들어 아래와 같이 작성합니다:</p>
       <div className="codeblock-body">
         <div className="codeblock-text">
-        <div>
-<span className="code-magenta">{"#"}</span><span className="code-magenta">{"include"}</span> <span className="code-orange">{"<"}</span><span className="code-orange">{"efi"}</span><span className="code-orange">{"."}</span><span className="code-orange">{"h"}</span><span className="code-orange">{">"}</span><br></br>
-<span className="code-magenta">{"#"}</span><span className="code-magenta">{"include"}</span> <span className="code-orange">{"<"}</span><span className="code-orange">{"efilib"}</span><span className="code-orange">{"."}</span><span className="code-orange">{"h"}</span><span className="code-orange">{">"}</span><br></br>
+<div>
+<span className="code-magenta">{"#"}</span><span className="code-magenta">{"include"}</span>&nbsp;<span className="code-white">{"<"}</span><span className="code-white">{"efi"}</span><span className="code-white">{"."}</span><span className="code-white">{"h"}</span><span className="code-white">{">"}</span><br></br>
+<span className="code-magenta">{"#"}</span><span className="code-magenta">{"include"}</span>&nbsp;<span className="code-white">{"<"}</span><span className="code-white">{"efilib"}</span><span className="code-white">{"."}</span><span className="code-white">{"h"}</span><span className="code-white">{">"}</span><br></br>
 <br></br>
 <br></br>
-<span className="code-white">{"EFI_STATUS"}</span> <span className="code-white">{"EFIAPI"}</span> <span className="code-purple">{"efi_main"}</span><span className="code-blue">{"("}</span><span className="code-white">{"EFI_HANDLE"}</span> <span className="code-white">{"ImageHandle"}</span><span className="code-lightyellow">{","}</span> <span className="code-white">{"EFI_SYSTEM_TABLE"}</span><span className="code-lightyellow">{"*"}</span> <span className="code-white">{"SystemTable"}</span><span className="code-blue">{")"}</span> <span className="code-blue">{"{"}</span><br></br>
-<span>&nbsp;&nbsp;</span><span className="code-purple">{"InitializeLib"}</span><span className="code-blue">{"("}</span><span className="code-white">{"ImageHandle"}</span><span className="code-lightyellow">{","}</span> <span className="code-white">{"SystemTable"}</span><span className="code-blue">{")"}</span><span className="code-lightyellow">{";"}</span><br></br>
+<span className="code-white">{"EFI_STATUS"}</span>&nbsp;<span className="code-white">{"EFIAPI"}</span>&nbsp;<span className="code-purple">{"efi_main"}</span><span className="code-blue">{"("}</span><span className="code-white">{"EFI_HANDLE"}</span>&nbsp;<span className="code-white">{"ImageHandle"}</span><span className="code-lightyellow">{","}</span>&nbsp;<span className="code-white">{"EFI_SYSTEM_TABLE"}</span><span className="code-lightyellow">{"*"}</span>&nbsp;<span className="code-white">{"SystemTable"}</span><span className="code-blue">{")"}</span>&nbsp;<span className="code-blue">{"{"}</span><br></br>
+&nbsp;&nbsp;<span className="code-purple">{"InitializeLib"}</span><span className="code-blue">{"("}</span><span className="code-white">{"ImageHandle"}</span><span className="code-lightyellow">{","}</span>&nbsp;<span className="code-white">{"SystemTable"}</span><span className="code-blue">{")"}</span><span className="code-lightyellow">{";"}</span><br></br>
 <br></br>
-<span>&nbsp;&nbsp;</span><span className="code-purple">{"Print"}</span><span className="code-blue">{"("}</span><span className="code-white">{"L"}</span><span className="code-orange">{"\"Hello, World!"}</span><span className="code-yellow">{"\\n"}</span><span className="code-orange">{""}</span><span className="code-yellow">{"\\r"}</span><span className="code-orange">{"\""}</span><span className="code-blue">{")"}</span><span className="code-lightyellow">{";"}</span><br></br>
-<span>&nbsp;&nbsp;</span><br></br>
-<span>&nbsp;&nbsp;</span><span className="code-magenta">{"while"}</span> <span className="code-blue">{"("}</span><span className="code-lightgreen">{"1"}</span><span className="code-blue">{")"}</span><span className="code-lightyellow">{";"}</span><br></br>
+&nbsp;&nbsp;<span className="code-purple">{"Print"}</span><span className="code-blue">{"("}</span><span className="code-white">{"L"}</span><span className="code-orange">{"\"Hello, World!"}</span><span className="code-yellow">{"\\n"}</span><span className="code-orange">{""}</span><span className="code-yellow">{"\\r"}</span><span className="code-orange">{"\""}</span><span className="code-blue">{")"}</span><span className="code-lightyellow">{";"}</span><br></br>
+&nbsp;&nbsp;<br></br>
+&nbsp;&nbsp;<span className="code-magenta">{"while"}</span>&nbsp;<span className="code-blue">{"("}</span><span className="code-lightgreen">{"1"}</span><span className="code-blue">{")"}</span><span className="code-lightyellow">{";"}</span><br></br>
 <br></br>
-<span>&nbsp;&nbsp;</span><span className="code-magenta">{"return"}</span> <span className="code-white">{"EFI_SUCCESS"}</span><span className="code-lightyellow">{";"}</span><br></br>
+&nbsp;&nbsp;<span className="code-magenta">{"return"}</span>&nbsp;<span className="code-white">{"EFI_SUCCESS"}</span><span className="code-lightyellow">{";"}</span><br></br>
 <span className="code-blue">{"}"}</span>
-        </div>
+</div>
         </div>
       </div>
 
@@ -131,10 +131,10 @@ const pageData = {
       </p>
       <p>
         그리고 GNU Parted를 이용하여 디스크 이미지에 파티션을 생성합니다.
-        GPT 테이블을 생성하고 2048번째 섹터부터 1048575섹터까지를 FAT32로 포맷된 EFI 시스템 파티션으로 지정합니다.
-        따라서 우리는 1046528개의 섹터, 즉 511 메가바이트 크기의 파티션을 생성하게 됩니다.
-        그리고 1048576번째 섹터 부터 끝까지를 FAT32로 포맷된 주 파티션으로 설정합니다.
-        따라서 우리는 1048576개의 섹터, 즉 512 메가바이트 크기의 파티션을 생성하게 됩니다.
+        GPT 테이블을 생성하고 2048번째 섹터부터 1048575번째 섹터까지를 FAT32로 포맷된 EFI 시스템 파티션으로 지정합니다.
+        따라서 우리는 1046528개의 섹터, 즉 511 메가바이트 크기의 EFI 시스템 파티션을 생성하게 됩니다.
+        그리고 1048576번째 섹터 부터 2097151번째 섹터까지를 FAT32로 포맷된 주 파티션으로 설정합니다.
+        따라서 우리는 1048576개의 섹터, 즉 512 메가바이트 크기의 주 파티션을 생성하게 됩니다.
       </p>
     </div>
   )
