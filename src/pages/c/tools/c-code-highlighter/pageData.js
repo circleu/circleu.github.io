@@ -1,6 +1,7 @@
 import React from "react";
 import Text from "../../../../elements/Text";
-import GithubLink from "../../../../elements/GithubLink";
+import HyperLink from "../../../../elements/HyperLink";
+import githubLogo from "../../../../elements/github-logo.png"
 
 const pageData = {
   "title": "C 코드 하이라이터",
@@ -12,7 +13,7 @@ const pageData = {
       <p>본 사이트에서 사용할 C 코드 하이라이터입니다.</p>
       <p>하이라이터는 C로 작성되었고 하이라이트된 코드는 jsx 문법으로 출력됩니다.</p>
       <p>아래는 리포지토리 링크입니다:</p>
-      <GithubLink text="https://github.com/circleu/C-code-highlighter" link="https://github.com/circleu/C-code-highlighter" />
+      <HyperLink img={githubLogo} label="Github" text="https://github.com/circleu/C-code-highlighter" link="https://github.com/circleu/C-code-highlighter" />
 
       <h3>코드</h3>
       <h3>main.c</h3>

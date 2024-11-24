@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import FolderIndex from "./FolderIndex";
 
+
 function Sidebar() {
   return (
     <div id="Sidebar-body">

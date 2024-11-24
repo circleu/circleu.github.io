@@ -1,11 +1,12 @@
 import React from "react";
 import Text from "../../elements/Text";
-import GithubLink from "../../elements/GithubLink";
+import HyperLink from "../../elements/HyperLink";
+import githubLogo from "../../elements/github-logo.png"
 
 const pageData = {
   "title": "메인",
   "createdate": "2024-04-06",
-  "editdate": "2024-04-12",
+  "editdate": "2024-11-14",
   "content": (
     <div>
       <h3>사이트에 대해</h3>
@@ -18,7 +19,8 @@ const pageData = {
       <p>UEFI를 사용한 x86_64 운영체제를 개발하려 하는 중입니다. UEFI만 해도 내용이 참 많아서 열심히 정리 중입니다.</p>
       
       <h3>외부 링크</h3>
-      <GithubLink text="https://github.com/circleu" link="https://github.com/circleu"/>
+      <HyperLink img={githubLogo} label="Github" text="https://github.com/circleu" link="https://github.com/circleu"/>
+      <HyperLink img={null} label="e-Mail" text="shanwdev25@gmail.com" link="mailto:shanwdev25@gmail.com" />
     </div>
   )
 }

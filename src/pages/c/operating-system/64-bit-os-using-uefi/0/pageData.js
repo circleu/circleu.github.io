@@ -1,6 +1,7 @@
 import React from "react";
 import Text from "../../../../../elements/Text";
-import GithubLink from "../../../../../elements/GithubLink";
+import HyperLink from "../../../../../elements/HyperLink";
+import githubLogo from "../../../../../elements/github-logo.png"
 
 const pageData = {
   "title": "UEFI를 사용한 64비트 운영체제 - 0. 들어가며",
@@ -13,7 +14,7 @@ const pageData = {
       <p>개발 환경은 GNU-EFI를 사용할 예정이고 아키텍처는 x86_64입니다.</p>
       <p>아마 방학 즈음부터 개발을 시작할 듯합니다.</p>
       <p>아래는 리포지토리 링크입니다:</p>
-      <GithubLink text="https://github.com/circleu/OSForteu64" link="https://github.com/circleu/OSForteu64" />
+      <HyperLink img={githubLogo} label="Github" text="https://github.com/circleu/OSForteu64" link="https://github.com/circleu/OSForteu64" />
     </div>
   )
 }
