@@ -9,8 +9,6 @@ const Main = {
     title: "메인",
     createdate: "2024-04-06",
     editdate: "2024-11-14",
-    category: [""],
-    dir: "/",
     content: (
       <div>
         <h3>사이트에 대해</h3>

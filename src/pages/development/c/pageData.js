@@ -7,6 +7,7 @@ import Tools from "./tools/pageData";
 const C = {
   data: {
     title: "C",
+    dir: "/development/c",
     content: (
       <div>
         {OperatingSystem.data.content}

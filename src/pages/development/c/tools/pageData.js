@@ -7,6 +7,7 @@ import CCodeHighlighter from "./c-code-highlighter/pageData";
 const Tools = {
   data: {
     title: "도구",
+    dir: "/development/c/tools",
     content: (
       <div>
         <PageList pageData={CCodeHighlighter.data} img={null}/>

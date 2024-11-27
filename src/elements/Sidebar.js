@@ -1,6 +1,7 @@
 import React from "react";
 import FolderIndex from "./FolderIndex";
 import LinearIndex from "./LinearIndex";
+import * as Pages from "../importPages"
 
 
 function Sidebar() {
@@ -14,21 +15,21 @@ function Sidebar() {
           <LinearIndex name={"메인"} link={"/"} isindent={0} />
         </ul>
         <ul>
-          <FolderIndex name={"개발"} link="/development" isopen={1} isindent={0} content={
+          <FolderIndex name={Pages.Development.data.title} link={Pages.Development.data.dir} isopen={1} isindent={0} content={
             <div>
-            <FolderIndex name={"C"} link="/development/c" isopen={1} isindent={1} content={
+            <FolderIndex name={Pages.C.data.title} link={Pages.C.data.dir} isopen={1} isindent={1} content={
               <div>
-                <FolderIndex name={"운영체제"} link="/development/c/operating-system" isopen={1} isindent={1} content = {
+                <FolderIndex name={Pages.OperatingSystem.data.title} link={Pages.OperatingSystem.data.dir} isopen={1} isindent={1} content = {
                   <div>
-                    <LinearIndex name={"UEFI를 사용한 64 비트 운영체제"} link={"/development/c/operating-system/64-bit-os-using-uefi"} isindent={1}/>
+                    <LinearIndex name={Pages._64BitOSUsingUEFI.data.title} link={Pages._64BitOSUsingUEFI.data.dir} isindent={1}/>
                   </div>
                 } />
   
-                <LinearIndex name={"도구"} link={"/development/c/tools"} isindent={1}/>
+                <LinearIndex name={Pages.Tools.data.title} link={Pages.Tools.data.dir} isindent={1}/>
               </div>
             } />
             
-            <FolderIndex name={"Python"} link="/development/python" isopen={1} isindent={1} content={
+            <FolderIndex name={Pages.Python.data.title} link={Pages.Python.data.dir} isopen={1} isindent={1} content={
               <div>
 
               </div>

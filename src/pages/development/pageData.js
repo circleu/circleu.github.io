@@ -6,6 +6,7 @@ import C from "./c/pageData";
 const Development = {
   data: {
     title: "개발",
+    dir: "/development",
     content: (
       <div>
         {C.data.content}

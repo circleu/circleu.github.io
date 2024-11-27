@@ -7,8 +7,6 @@ const _404 = {
     title: "페이지를 찾을 수 없습니다.",
     createdate: "404-Not-Found",
     editdate: "404-Not-Found",
-    category: [""],
-    dir: "/*",
     content: (
       <div>
         <h3>페이지를 찾을 수 없습니다.</h3>

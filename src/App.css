@@ -168,11 +168,11 @@ ul {
 	color: #888;
 }
 .pagelist-text {
-	margin: var(--text-default);
+	margin: var(--text-smallest);
 }
 .pagelist-title {
 	margin: 0;
-	font-size: var(--text-largest);
+	font-size: var(--text-larger);
 	font-weight: bold;
 }
 .pagelist-date {
