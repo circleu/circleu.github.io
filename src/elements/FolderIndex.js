@@ -1,7 +1,7 @@
 import React from "react";
 
 
-function CollapseExpandIndex(name) {
+/* function CollapseExpandIndex(name) {
   var index = document.getElementsByName(name);
 
   for (var i = 0; i < index.length; i++) {
@@ -13,14 +13,14 @@ function CollapseExpandIndex(name) {
   }
 
   return;
-}
+} */
 
 // onClick={() => CollapseExpandIndex(name)} if you want to make an index foldable, use this.
 
 function FolderIndex({name, link, isopen, isindent, content}) {
   var obj;
   
-  if (isopen == 1) {
+  if (isopen === 1) {
     obj = (
       <div>
         <li className="index-foldable"><a className="index-button" href={link}>{name}</a></li>
@@ -28,7 +28,7 @@ function FolderIndex({name, link, isopen, isindent, content}) {
       </div>
     );
   }
-  else if (isopen == 0) {
+  else if (isopen === 0) {
     obj = (
       <div>
         <li className="index-foldable"><a className="index-button" href={link}>{name}</a></li>
@@ -37,14 +37,14 @@ function FolderIndex({name, link, isopen, isindent, content}) {
     );
   }
 
-  if (isindent == 1) {
+  if (isindent === 1) {
     return (
       <ul>
         {obj}
       </ul>
     )
   }
-  else if (isindent == 0) {
+  else if (isindent === 0) {
     return (
       <div>
         {obj}

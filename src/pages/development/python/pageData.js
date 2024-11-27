@@ -1,5 +1,7 @@
 import React from "react";
 import CategoryPage from "../../../elements/CategoryPage";
+import PageList from "../../../elements/PageList";
+import RandomGeneratingAlgorithm from "./random-generating-algorithm/pageData"
 
 
 const Python = {
@@ -8,7 +10,7 @@ const Python = {
     dir: "/development/python",
     content: (
       <div>
-        
+        <PageList pageData={RandomGeneratingAlgorithm.data} img={null} />
       </div>
     )
   },

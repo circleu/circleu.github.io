@@ -1,10 +1,14 @@
 import React from "react";
 
 function HyperLink({img, label, text, link}) {
+  if (label != null) {
+    label += ":";
+  }
+
   if (img == null) {
     return (
       <div className="hyperlink-body">
-        <span className="hyperlink-label">{label}{":"}&nbsp;</span>
+        <span className="hyperlink-label">{label}&nbsp;</span>
         <a className="hyperlink-link" href={link}>{text}</a>
       </div>
     );
@@ -12,8 +16,8 @@ function HyperLink({img, label, text, link}) {
   else {
     return (
       <div className="hyperlink-body">
-        <img className="hyperlink-img" src={img}></img>
-        <span className="hyperlink-label">{label}{":"}&nbsp;</span>
+        <img className="hyperlink-img" src={img} alt={label}></img>
+        <span className="hyperlink-label">{label}&nbsp;</span>
         <a className="hyperlink-link" href={link}>{text}</a>
       </div>
     );

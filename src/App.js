@@ -22,6 +22,7 @@ function App() {
           <Route path={Pages.OperatingSystem.data.dir} element={<Pages.OperatingSystem.page />}></Route>
           <Route path={Pages._64BitOSUsingUEFI.data.dir} element={<Pages._64BitOSUsingUEFI.page />}></Route>
           <Route path={Pages.Python.data.dir} element={<Pages.Python.page />}></Route>
+          <Route path={Pages.RandomGeneratingAlgorithm.data.dir} element={<Pages.RandomGeneratingAlgorithm.page />}></Route>
         </Routes>
       </BrowserRouter>
     </div>

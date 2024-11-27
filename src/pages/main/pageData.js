@@ -2,13 +2,14 @@ import React from "react";
 import Text from "../../elements/Text";
 import HyperLink from "../../elements/HyperLink";
 import githubLogo from "../../elements/github-logo.png"
+import emailIcon from "../../elements/email-icon.jpg"
 
 
 const Main = {
   data: {
     title: "메인",
     createdate: "2024-04-06",
-    editdate: "2024-11-14",
+    editdate: "2024-11-28",
     content: (
       <div>
         <h3>사이트에 대해</h3>
@@ -22,7 +23,11 @@ const Main = {
         
         <h3>외부 링크</h3>
         <HyperLink img={githubLogo} label="Github" text="https://github.com/circleu" link="https://github.com/circleu"/>
-        <HyperLink img={null} label="e-Mail" text="shanwdev25@gmail.com" link="mailto:shanwdev25@gmail.com" />
+        <HyperLink img={emailIcon} label="e-mail" text="shanwdev25@gmail.com" link="mailto:shanwdev25@gmail.com" />
+
+        <h3>Site Info</h3>
+        <p>The site is powered by React.js, made by circleu.</p>
+        <p>Some images, including e-mail icon, etc., came from <a className="link" href="https://www.vecteezy.com">vecteezy.com</a></p>
       </div>
     )
   },
