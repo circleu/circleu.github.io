@@ -1,6 +1,7 @@
 import React from "react";
 import CategoryPage from "../../elements/CategoryPage";
 import C from "./c/pageData";
+import Python from "./python/pageData";
 
 
 const Development = {
@@ -10,6 +11,7 @@ const Development = {
     content: (
       <div>
         {C.data.content}
+        {Python.data.content}
       </div>
     )
   },
