@@ -1,7 +1,7 @@
 import React from "react";
-import Text from "../../../../../elements/Text";
-import HyperLink from "../../../../../elements/HyperLink";
-import githubLogo from "../../../../../elements/github-logo.png"
+import Text from "../../../../elements/Text";
+import HyperLink from "../../../../elements/HyperLink";
+import githubLogo from "../../../../elements/github-logo.png"
 
 
 const CCodeHighlighter = {
@@ -9,8 +9,8 @@ const CCodeHighlighter = {
     title: "C 코드 하이라이터",
     createdate: "2024-10-24",
     editdate: "2024-10-28",
-    category: ["개발", "C", "도구"],
-    dir: "/development/c/tools/c-code-highlighter",
+    category: ["개발", "C"],
+    dir: "/development/c/c-code-highlighter",
     content: (
       <div>
         <h3>들어가는 글</h3>

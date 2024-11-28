@@ -1,7 +1,7 @@
 import React from "react";
 import CategoryPage from "../../../elements/CategoryPage";
-import OperatingSystem from "./operating-system/pageData";
-import Tools from "./tools/pageData";
+import PageList from "../../../elements/PageList";
+import CCodeHighlighter from "./c-code-highlighter/pageData";
 
 
 const C = {
@@ -10,8 +10,7 @@ const C = {
     dir: "/development/c",
     content: (
       <div>
-        {OperatingSystem.data.content}
-        {Tools.data.content}
+        <PageList pageData={CCodeHighlighter.data} img={null} />
       </div>
     )
   },

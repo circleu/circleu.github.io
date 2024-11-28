@@ -1,13 +1,13 @@
 import React from "react";
-import CategoryPage from "../../../../../elements/CategoryPage";
-import PageList from "../../../../../elements/PageList";
+import CategoryPage from "../../../../elements/CategoryPage";
+import PageList from "../../../../elements/PageList";
 import _64BitOSUsingUEFI0 from "./0/pageData";
 
 
 const _64BitOSUsingUEFI = {
   data: {
     title: "UEFI를 사용한 64 비트 운영체제",
-    dir: "/development/c/operating-system/64-bit-os-using-uefi",
+    dir: "/development/operating-system/64-bit-os-using-uefi",
     content: (
       <div>
         <PageList pageData={_64BitOSUsingUEFI0.data} img={null} />

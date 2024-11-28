@@ -17,9 +17,8 @@ const Main = {
         <p>그르거나, 비효율적이거나 가독성이 떨어지는 코드들이 있을 수 있습니다.</p>
   
         <h3>본인에 대해</h3>
-        <p>현재 운영체제를 공부 중입니다.</p>
-        <p>덕분에 C를 진득하게 배우게 됐네요(...)</p>
-        <p>UEFI를 이용한 운영체제를 제작하려 합니다. UEFI가 내용이 많아서 열심히 정리 중입니다.</p>
+        <p>운영체제를 공부 중입니다. 덕분에 C를 진득하게 배우게 됐네요(...)</p>
+        <p>현재 학교 시험 때문에 운영체제 개발에 시간을 쏟기 어렵습니다. 아마 방학 즈음부터 개발을 시작할 듯합니다.</p>
         
         <h3>외부 링크</h3>
         <HyperLink img={githubLogo} label="Github" text="https://github.com/circleu" link="https://github.com/circleu"/>
@@ -27,7 +26,8 @@ const Main = {
 
         <h3>Site Info</h3>
         <p>The site is powered by React.js, made by circleu.</p>
-        <p>Some images, including e-mail icon, etc., came from <a className="link" href="https://www.vecteezy.com">vecteezy.com</a></p>
+        <p>Some images, including e-mail icon, etc., came from <a className="link" href="https://www.vecteezy.com">vecteezy.com</a>.</p>
+        <p><a className="link" href="https://github.com/naver/d2codingfont">D2Coding</a> font is used for the site's 'codeblock' element.</p>
       </div>
     )
   },
