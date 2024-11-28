@@ -13,7 +13,7 @@ const PythonCodeHighlighter = {
       <div>
         <h3>들어가는 글</h3>
         <p>파이썬 코드 하이라이터입니다.</p>
-        <p><a className="link" href="/development/c/tools/c-code-highlighter">C 코드 하이라이터</a>를 파이썬으로 구현하고 그에 맞게 다듬은 것입니다.</p>
+        <p><a className="link" href="/development/c/c-code-highlighter">C 코드 하이라이터</a>를 파이썬으로 구현하고 그에 맞게 다듬은 것입니다.</p>
         <p>세부 사항은 C 코드 하이라이터와 같으니 참고하세요.</p>
 
         <h3>코드</h3>
