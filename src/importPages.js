@@ -7,7 +7,7 @@ import OperatingSystem from "./pages/development/operating-system/pageData"
 import C from "./pages/development/c/pageData"
 import _64BitOSUsingUEFI from "./pages/development/operating-system/64-bit-os-using-uefi/pageData";
 import Python from "./pages/development/python/pageData"
-import RandomGeneratingAlgorithm from "./pages/development/python/random-generating-algorithm/pageData";
+import RandomGeneratingAlgorithm from "./pages/development/c/random-generating-algorithm/pageData";
 import PythonCodeHighlighter from "./pages/development/python/python-code-highlighter/pageData"
 
 export {

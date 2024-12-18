@@ -1,7 +1,6 @@
 import React from "react";
 import CategoryPage from "../../../elements/CategoryPage";
 import PageList from "../../../elements/PageList";
-import RandomGeneratingAlgorithm from "./random-generating-algorithm/pageData"
 import PythonCodeHighlighter from "./python-code-highlighter/pageData";
 
 
@@ -12,7 +11,6 @@ const Python = {
     content: (
       <div>
         <PageList pageData={PythonCodeHighlighter.data} img={null} />
-        <PageList pageData={RandomGeneratingAlgorithm.data} img={null} />
       </div>
     )
   },
