@@ -2,6 +2,7 @@ import React from "react";
 import CategoryPage from "../../../../elements/CategoryPage";
 import PageList from "../../../../elements/PageList";
 import _64BitOSUsingUEFI0 from "./0/pageData";
+import _64BitOSUsingUEFI1 from "./1/pageData";
 
 
 const _64BitOSUsingUEFI = {
@@ -11,6 +12,7 @@ const _64BitOSUsingUEFI = {
     content: (
       <div>
         <PageList pageData={_64BitOSUsingUEFI0.data} img={null} />
+        <PageList pageData={_64BitOSUsingUEFI1.data} img={null} />
       </div>
     )
   },

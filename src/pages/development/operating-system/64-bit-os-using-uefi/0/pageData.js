@@ -9,7 +9,6 @@ const _64BitOSUsingUEFI0 = {
     title: "UEFI를 사용한 64비트 운영체제 - 0. 들어가며",
     createdate: "2024-10-23",
     editdate: "2024-11-28",
-    category: ["개발", "운영체제", "UEFI를 사용한 64 비트 운영체제"],
     dir: "/development/operating-system/64-bit-os-using-uefi/0",
     content: (
       <div>

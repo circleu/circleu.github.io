@@ -7,7 +7,6 @@ const PythonCodeHighlighter = {
     title: "파이썬 코드 하이라이터",
     createdate: "2024-11-28",
     editdate: "2024-11-28",
-    category: ["개발", "Python"],
     dir: "/development/python/python-code-highlighter",
     content: (
       <div>

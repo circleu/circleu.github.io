@@ -36,6 +36,10 @@ function Sidebar() {
               } />
             </div>
           } />
+
+          <FolderIndex name={Pages.Study.data.title} link={Pages.Study.data.dir} isopen={1} isindent={0} content={
+            <div></div>
+          } />
         </ul>
       </div>
     </div>

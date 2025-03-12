@@ -7,7 +7,6 @@ const RandomGeneratingAlgorithm = {
     title: "난수 생성 알고리즘",
     createdate: "2024-11-28",
     editdate: "2024-12-18",
-    category: ["개발", "C"],
     dir: "/development/c/random-generating-algorithm",
     content: (
       <div>

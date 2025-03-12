@@ -11,7 +11,6 @@ function PageList({pageData, img}) {
             <div className="pagelist-text">
               <p className="pagelist-title">{pageData.title}</p>
               <p className="pagelist-date">날짜: {pageData.createdate}</p>
-              <p className="pagelist-category">카테고리: {pageData.category.join(", ")}</p>
             </div>    
           </div>
         </a>
@@ -29,7 +28,6 @@ function PageList({pageData, img}) {
               <span>{img}</span>
               <p className="pagelist-title">{pageData.title}</p>
               <p className="pagelist-date">날짜: {pageData.createdate}</p>
-              <p className="pagelist-category">카테고리: {pageData.category.join(", ")}</p>
             </div>    
           </div>
         </a>

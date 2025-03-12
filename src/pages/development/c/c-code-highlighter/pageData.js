@@ -9,7 +9,6 @@ const CCodeHighlighter = {
     title: "C 코드 하이라이터",
     createdate: "2024-10-24",
     editdate: "2024-10-28",
-    category: ["개발", "C"],
     dir: "/development/c/c-code-highlighter",
     content: (
       <div>
