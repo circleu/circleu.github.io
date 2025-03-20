@@ -509,19 +509,6 @@ const FPrimeXDividedByFX = {
             <MathsItalic x="x"/>
             <MathsPunct x=")"/>
             <MathsPunct x="="/>
-            <MathsPunct x="["/>
-            <MathsNormal x="ln"/>
-            <MathsPunct x="{"/>
-            <MathsItalic x="f"/>
-            <MathsPunct x="("/>
-            <MathsItalic x="x"/>
-            <MathsPunct x=")"/>
-            <MathsPunct x="}"/>
-            <MathsPunct x="]"/>
-            <MathsNormal x="`"/>
-          </div>
-          <div className="maths-body">
-            <MathsPunct x="="/>
             <MathsPunct x="{"/>
             <MathsNormal x="ln"/>
             <MathsPunct x="("/>
@@ -551,6 +538,8 @@ const FPrimeXDividedByFX = {
             <MathsPunct x=")"/>
             <MathsPunct x="}"/>
             <MathsNormal x="`"/>
+          </div>
+          <div className="maths-body">
             <MathsPunct x="="/>
             <MathsFrac x1={<span><MathsNormal x="1"/></span>} x2={<span><MathsItalic x="x"/><MathsPunct x="-"/><MathsNormal x="1"/></span>}/>
             <MathsPunct x="+"/>
