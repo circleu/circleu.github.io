@@ -11,6 +11,7 @@ import Python from "./pages/development/python/pageData";
 import RandomGeneratingAlgorithm from "./pages/development/c/random-generating-algorithm/pageData";
 import PythonCodeHighlighter from "./pages/development/python/python-code-highlighter/pageData";
 import Study from "./pages/study/pageData";
+import FPrimeXDividedByFX from "./pages/study/f-prime-x-divided-by-f-x/pageData";
 
 export {
   Main, 
@@ -25,5 +26,6 @@ export {
   Python, 
   RandomGeneratingAlgorithm, 
   PythonCodeHighlighter,
-  Study
+  Study,
+  FPrimeXDividedByFX
 };

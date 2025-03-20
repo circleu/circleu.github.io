@@ -13,6 +13,10 @@
 	font-family: "d2c";
 	src: url(./D2Coding.ttf);
 }
+@font-face {
+	font-family: 'NanumMyeongjo';
+	src: url(./NanumMyeongjo.ttf)
+}
 @media screen and (min-width: 1280px) {
 	:root {
 		--text-default: 16px
@@ -78,7 +82,7 @@ s {
   background-color: #222;
 }
 #Sidebar-text {
-	overflow: scroll;
+	overflow-y: scroll;
   padding: 5%;
   color: #fff;
 }
@@ -166,6 +170,45 @@ s {
 }
 .link:hover {
 	color: #48f;
+}
+.maths-frame {
+	background-color: #444;
+	color: #fff;
+	font-family: "NanumMyeongjo";
+	font-size: var(--text-large);
+	margin: 0;
+	padding: 16px;
+	white-space: pre;
+	overflow: scroll;
+}
+.maths-body {
+	display: table;
+	margin: 4px 0
+}
+.maths-element {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	padding: 0 2px;
+}
+.maths-power {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	font-size: var(--text-small);
+}
+.maths-punct {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	padding: 0 2px;
+	font-size: var(--text-largest);
+}
+.maths-frac {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	min-width: 32px;
 }
 
 .pagelist-body {

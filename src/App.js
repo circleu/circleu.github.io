@@ -25,6 +25,7 @@ function App() {
           <Route path={Pages.RandomGeneratingAlgorithm.data.dir} element={<Pages.RandomGeneratingAlgorithm.page />}></Route>
           <Route path={Pages.PythonCodeHighlighter.data.dir} element={<Pages.PythonCodeHighlighter.page />}></Route>
           <Route path={Pages.Study.data.dir} element={<Pages.Study.page />}></Route>
+          <Route path={Pages.FPrimeXDividedByFX.data.dir} element={<Pages.FPrimeXDividedByFX.page />}></Route>
         </Routes>
       </BrowserRouter>
     </div>

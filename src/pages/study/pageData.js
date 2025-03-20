@@ -1,5 +1,7 @@
 import React from "react";
 import CategoryPage from "../../elements/CategoryPage";
+import PageList from "../../elements/PageList";
+import FPrimeXDividedByFX from "./f-prime-x-divided-by-f-x/pageData";
 
 
 const Study = {
@@ -8,7 +10,7 @@ const Study = {
     dir: "/study",
     content: (
       <div>
-        
+        <PageList pageData={FPrimeXDividedByFX.data} img={null} />
       </div>
     )
   },
