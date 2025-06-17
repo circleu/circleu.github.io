@@ -1,21 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.22a777a6.css",
-    "main.js": "/static/js/main.a0117122.js",
+    "main.css": "/static/css/main.8bd5435c.css",
+    "main.js": "/static/js/main.46ebc668.js",
     "static/js/453.209d4f9d.chunk.js": "/static/js/453.209d4f9d.chunk.js",
+    "static/media/noto-serif-kr.ttf": "/static/media/noto-serif-kr.d294628559c9d5b8cab1.ttf",
+    "static/media/noto-sans-kr.ttf": "/static/media/noto-sans-kr.36802afd186fbb7643b1.ttf",
     "static/media/D2Coding.ttf": "/static/media/D2Coding.8e1251be588cceb18bae.ttf",
-    "static/media/NanumMyeongjo.ttf": "/static/media/NanumMyeongjo.7118f418c77c17301efd.ttf",
+    "static/media/cmu-roman-italic.ttf": "/static/media/cmu-roman-italic.242b10aa04f441336096.ttf",
+    "static/media/cmu-roman-mod.ttf": "/static/media/cmu-roman-mod.735dcfc55e17ed0cb627.ttf",
+    "static/media/cmu-roman-bold.ttf": "/static/media/cmu-roman-bold.c97a73040fda7e3cb554.ttf",
     "static/media/email-icon.jpg": "/static/media/email-icon.fdbb4a6a546c4b5b1c03.jpg",
     "static/media/img02.png": "/static/media/img02.da3959be0ae3d70da51a.png",
     "static/media/img01.png": "/static/media/img01.2d4ec477ac904d617bf3.png",
     "static/media/img00.png": "/static/media/img00.dfcd0d863fcddd19e2e9.png",
     "index.html": "/index.html",
-    "main.22a777a6.css.map": "/static/css/main.22a777a6.css.map",
-    "main.a0117122.js.map": "/static/js/main.a0117122.js.map",
+    "main.8bd5435c.css.map": "/static/css/main.8bd5435c.css.map",
+    "main.46ebc668.js.map": "/static/js/main.46ebc668.js.map",
     "453.209d4f9d.chunk.js.map": "/static/js/453.209d4f9d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.22a777a6.css",
-    "static/js/main.a0117122.js"
+    "static/css/main.8bd5435c.css",
+    "static/js/main.46ebc668.js"
   ]
 }
