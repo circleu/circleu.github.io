@@ -26,7 +26,6 @@ const Main = {
         <h3>Site Info</h3>
         <p>The site is powered by React.js, made by circleu.</p>
         <p>Some images, including e-mail icon, etc., came from <a className="link" href="https://www.vecteezy.com">vecteezy.com</a>.</p>
-        <p><a className="link" href="https://github.com/naver/d2codingfont">D2Coding</a> font is used for the site's 'codeblock' element.</p>
       </div>
     )
   },

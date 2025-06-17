@@ -8,7 +8,7 @@ import Image02 from "./img02.png"
 
 const FPrimeXDividedByFX = {
   data: {
-    title: "f`(x)/f(x)의 결과가 f(x)의 인수들의 역수를 합한 값이 되는 이유에 관한 탐구",
+    title: "f'(x)/f(x)의 결과가 f(x)의 인수들의 역수를 합한 값이 되는 이유에 관한 탐구",
     createdate: "2025-03-18",
     editdate: "2025-03-21",
     dir: "/study/f-prime-x-divided-by-f-x",
@@ -17,7 +17,7 @@ const FPrimeXDividedByFX = {
         <h3>들어가는 글</h3>
         <p>할 짓이 없어 최근 수학II에서 배웠던 다항함수의 미분을 가지고 놀다가 재밌는 것을 발견했다.</p>
         <p>
-          최고차항의 계수가 1인 다항함수를 f(x)라 할 때, f(x)를 x에 대하여 미분한 식을 f`(x)라 하면, f`(x)/f(x)의 결과가 f(x)의 인수들의 역수를 합한 값이 된다.
+          최고차항의 계수가 1인 다항함수를 f(x)라 할 때, f(x)를 x에 대하여 미분한 식을 f'(x)라 하면, f'(x)/f(x)의 결과가 f(x)의 인수들의 역수를 합한 값이 된다.
           (최고차항의 계수가 1이 아니어도 성립하는지는 모르겠다. 알아 보기 귀찮다.)
         </p>
         <p>아래는 예이다:</p>
@@ -54,20 +54,20 @@ const FPrimeXDividedByFX = {
             <MathsNormal x="를"/>
             <MathsItalic x="x"/>
             <MathsNormal x="에 대하여 미분한 식을"/>
-            <MathsItalic x="f`"/>
+            <MathsItalic x="f'"/>
             <MathsPunct x="("/>
             <MathsItalic x="x"/>
             <MathsPunct x=")"/>
             <MathsNormal x="라 하면"/>
           </div>
           <div className="maths-body">
-            <MathsFrac x1={<span><MathsItalic x="f`"/><MathsPunct x="("/><MathsItalic x="x"/><MathsPunct x=")"/></span>} x2={<span><MathsItalic x="f"/><MathsPunct x="("/><MathsItalic x="x"/><MathsPunct x=")"/></span>}/>
+            <MathsFrac x1={<div><MathsItalic x="f'"/><MathsPunct x="("/><MathsItalic x="x"/><MathsPunct x=")"/></div>} x2={<div><MathsItalic x="f"/><MathsPunct x="("/><MathsItalic x="x"/><MathsPunct x=")"/></div>}/>
             <MathsPunct x="="/>
-            <MathsFrac x1={<span><MathsNormal x="1"/></span>} x2={<span><MathsItalic x="x"/><MathsPunct x="-"/><MathsNormal x="1"/></span>}/>
+            <MathsFrac x1={<div><MathsNormal x="1"/></div>} x2={<div><MathsItalic x="x"/><MathsPunct x="-"/><MathsNormal x="1"/></div>}/>
             <MathsPunct x="+"/>
-            <MathsFrac x1={<span><MathsNormal x="1"/></span>} x2={<span><MathsItalic x="x"/><MathsPunct x="-"/><MathsNormal x="3"/></span>}/>
+            <MathsFrac x1={<div><MathsNormal x="1"/></div>} x2={<div><MathsItalic x="x"/><MathsPunct x="-"/><MathsNormal x="3"/></div>}/>
             <MathsPunct x="+"/>
-            <MathsFrac x1={<span><MathsNormal x="1"/></span>} x2={<span><MathsItalic x="x"/><MathsPunct x="-"/><MathsNormal x="5"/></span>}/>
+            <MathsFrac x1={<div><MathsNormal x="1"/></div>} x2={<div><MathsItalic x="x"/><MathsPunct x="-"/><MathsNormal x="5"/></div>}/>
           </div>
         </div>
         <p>갓 미분을 배운 나로서는 왜 이런 결과가 나오는지 단번에 알아차릴 수가 없어 이에 관한 탐구를 진행하고자 한다.</p>
@@ -84,7 +84,7 @@ const FPrimeXDividedByFX = {
         </p>
         <p>셋째 사진 맨 아래의 식은 GPT가 친절하게 부분합으로 단순화하여 준 식의 모습이다.</p>
         <p>원리도 생각보다 간단하고 GPT가 설명을 너무 잘해 줘서 더 조사할 게 없을 듯하지만... 조금만 더 조사하여 보자.</p>
-        <p>찾아 보니, '자연로그' 함수를 미분하면 진수의 역수가 나오고, 이를 이용하여 f`(x)/f(x)의 결과를 유도할 수 있음을 알았다. 그렇다면 '자연로그'는 무엇인가?</p>
+        <p>찾아 보니, '자연로그' 함수를 미분하면 진수의 역수가 나오고, 이를 이용하여 f'(x)/f(x)의 결과를 유도할 수 있음을 알았다. 그렇다면 '자연로그'는 무엇인가?</p>
         <div className="maths-frame">
           <div className="maths-body">
             <MathsNormal x="자연로그 ln"/>
@@ -96,7 +96,7 @@ const FPrimeXDividedByFX = {
             <MathsParen dir={0}/>
             <MathsNormal x="1"/>
             <MathsPunct x="+"/>
-            <MathsFrac x1={<span><MathsNormal x={"1"}/></span>} x2={<span><MathsItalic x="x"/></span>}/>
+            <MathsFrac x1={<div><MathsNormal x={"1"}/></div>} x2={<div><MathsItalic x="x"/></div>}/>
             <MathsParen dir={1}/>
             <MathsSup x={<MathsItalic x="x"/>}/>
             <MathsNormal x="를 밑으로 하는 로그, 즉, log"/>
@@ -119,7 +119,7 @@ const FPrimeXDividedByFX = {
             <MathsNormal x="라 하면"/>
           </div>
           <div className="maths-body">
-            <MathsItalic x="f`"/>
+            <MathsItalic x="f'"/>
             <MathsPunct x="("/>
             <MathsItalic x="x"/>
             <MathsPunct x=")"/>
@@ -127,7 +127,7 @@ const FPrimeXDividedByFX = {
             <MathsLim x1={<MathsItalic x="h"/>} x2={<MathsNormal x="0"/>}/>
             <MathsFrac 
               x1={
-                <span>
+                <div>
                   <MathsItalic x="f"/>
                   <MathsPunct x="("/>
                   <MathsItalic x="x"/>
@@ -139,12 +139,12 @@ const FPrimeXDividedByFX = {
                   <MathsPunct x="("/>
                   <MathsItalic x="x"/>
                   <MathsPunct x=")"/>
-                </span>
+                </div>
               }
               x2={
-                <span>
+                <div>
                   <MathsItalic x="h"/>
-                </span>
+                </div>
               }
             />
           </div>
@@ -153,30 +153,30 @@ const FPrimeXDividedByFX = {
             <MathsLim x1={<MathsItalic x="h"/>} x2={<MathsNormal x="0"/>}/>
             <MathsFrac
               x1={
-                <span>
+                <div>
                   <MathsItalic x="f"/>
                   <MathsParen dir={0}/>
                   <MathsFrac
                     x1={
-                      <span>
+                      <div>
                         <MathsItalic x="x"/>
                         <MathsPunct x="+"/>
                         <MathsItalic x="h"/>
-                      </span>
+                      </div>
                     }
                     x2={
-                      <span>
+                      <div>
                         <MathsItalic x="x"/>
-                      </span>
+                      </div>
                     }
                   />
                   <MathsParen dir={1}/>
-                </span>
+                </div>
               }
               x2={
-                <span>
+                <div>
                   <MathsItalic x="h"/>
-                </span>
+                </div>
               }
             />
           </div>
@@ -185,54 +185,54 @@ const FPrimeXDividedByFX = {
             <MathsLim x1={<MathsItalic x="h"/>} x2={<MathsNormal x="0"/>}/>
             <MathsFrac
               x1={
-                <span>
+                <div>
                   <MathsNormal x="ln"/>
                   <MathsParen dir={0}/>
                   <MathsNormal x="1"/>
                   <MathsPunct x="+"/>
                   <MathsFrac
                     x1={
-                      <span>
+                      <div>
                         <MathsItalic x="h"/>
-                      </span>
+                      </div>
                     }
                     x2={
-                      <span>
+                      <div>
                         <MathsItalic x="x"/>
-                      </span>
+                      </div>
                     }
                   />
                   <MathsParen dir={1}/>
-                </span>
+                </div>
               }
               x2={
-                <span>
+                <div>
                   <MathsFrac
                     x1={
-                      <span>
+                      <div>
                         <MathsItalic x="h"/>
-                      </span>
+                      </div>
                     }
                     x2={
-                      <span>
+                      <div>
                         <MathsItalic x="x"/>
-                      </span>
+                      </div>
                     }
                   />
-                </span>
+                </div>
               }
             />
             <MathsPunct x="×"/>
             <MathsFrac
               x1={
-                <span>
+                <div>
                   <MathsNormal x="1"/>
-                </span>
+                </div>
               }
               x2={
-                <span>
+                <div>
                   <MathsItalic x="x"/>
-                </span>
+                </div>
               }
             />
           </div>
@@ -245,53 +245,53 @@ const FPrimeXDividedByFX = {
             <MathsPunct x="+"/>
             <MathsFrac
               x1={
-                <span>
+                <div>
                   <MathsItalic x="h"/>
-                </span>
+                </div>
               }
               x2={
-                <span>
+                <div>
                   <MathsItalic x="x"/>
-                </span>
+                </div>
               }
             />
             <MathsParen dir={1}/>
             <MathsSup
               x={
-                <span>
+                <div>
                   <MathsFrac
                     x1={
-                      <span>
+                      <div>
                         <MathsItalic x="x"/>
-                      </span>
+                      </div>
                     }
                     x2={
-                      <span>
+                      <div>
                         <MathsItalic x="h"/>
-                      </span>
+                      </div>
                     }
                   />
-                </span>
+                </div>
               }
             />
             <MathsPunct x="×"/>
             <MathsFrac
               x1={
-                <span>
+                <div>
                   <MathsNormal x="1"/>
-                </span>
+                </div>
               }
               x2={
-                <span>
+                <div>
                   <MathsItalic x="x"/>
-                </span>
+                </div>
               }
             />
           </div>
           <div className="maths-body">
             <MathsNormal x="여기서 무리수"/>
             <MathsItalic x="e"/>
-            <MathsItalic x="의 정의를 이용하면"/>
+            <MathsNormal x="의 정의를 이용하면"/>
           </div>
           <div className="maths-body">      
             <MathsPunct x="="/>
@@ -300,27 +300,27 @@ const FPrimeXDividedByFX = {
             <MathsPunct x="×"/>
             <MathsFrac
               x1={
-                <span>
+                <div>
                   <MathsNormal x="1"/>
-                </span>
+                </div>
               }
               x2={
-                <span>
+                <div>
                   <MathsItalic x="x"/>
-                </span>
+                </div>
               }
             />
             <MathsPunct x="="/>
             <MathsFrac
               x1={
-                <span>
+                <div>
                   <MathsNormal x="1"/>
-                </span>
+                </div>
               }
               x2={
-                <span>
+                <div>
                   <MathsItalic x="x"/>
-                </span>
+                </div>
               }
             />
           </div>
@@ -329,7 +329,7 @@ const FPrimeXDividedByFX = {
           무리수 e의 정의를 이용하는 부분은 자연로그의 진수 자리에 있는 h/x와 지수 자리에 있는 x/h를 잘 보면 된다. 
           h가 0으로 가서 h/x는 무한소, x/h는 무한대이므로 자연로그의 밑 e의 정의와 같음을 알 수 있다.
         </p>
-        <p>그러면 이제 f`(x)/f(x)를 자연로그를 사용하여 표현해 보자.</p>
+        <p>그러면 이제 f'(x)/f(x)를 자연로그를 사용하여 표현해 보자.</p>
         <div className="maths-frame">
           <div className="maths-body">
             <MathsNormal x="먼저"/>
@@ -342,24 +342,24 @@ const FPrimeXDividedByFX = {
             <MathsPunct x=")"/>
             <MathsPunct x="}"/>
             <MathsPunct x="]"/>
-            <MathsNormal x="`"/>
+            <MathsItalic x="'"/>
             <MathsPunct x="="/>
             <MathsFrac
               x1={
-                <span>
-                  <MathsItalic x="f`"/>
+                <div>
+                  <MathsItalic x="f'"/>
                   <MathsPunct x="("/>
                   <MathsItalic x="x"/>
                   <MathsPunct x=")"/>
-                </span>
+                </div>
               }
               x2={
-                <span>
+                <div>
                   <MathsItalic x="f"/>
                   <MathsPunct x="("/>
                   <MathsItalic x="x"/>
                   <MathsPunct x=")"/>
-                </span>
+                </div>
               }
             />
             <MathsNormal x="임을 밝히자."/>
@@ -406,7 +406,7 @@ const FPrimeXDividedByFX = {
             <MathsNormal x="라 하면"/>
           </div>
           <div className="maths-body">
-            <MathsItalic x="h`"/>
+            <MathsItalic x="h'"/>
             <MathsPunct x="("/>
             <MathsItalic x="x"/>
             <MathsPunct x=")"/>
@@ -420,9 +420,9 @@ const FPrimeXDividedByFX = {
             <MathsPunct x=")"/>
             <MathsPunct x="}"/>
             <MathsPunct x="]"/>
-            <MathsNormal x="`"/>
+            <MathsItalic x="'"/>
             <MathsPunct x="×"/>
-            <MathsItalic x="f`"/>
+            <MathsItalic x="f'"/>
             <MathsPunct x="("/>
             <MathsItalic x="x"/>
             <MathsPunct x=")"/>
@@ -431,41 +431,41 @@ const FPrimeXDividedByFX = {
             <MathsPunct x="="/>
             <MathsFrac
               x1={
-                <span>
+                <div>
                   <MathsNormal x="1"/>
-                </span>
+                </div>
               }
               x2={
-                <span>
+                <div>
                   <MathsItalic x="f"/>
                   <MathsPunct x="("/>
                   <MathsItalic x="x"/>
                   <MathsPunct x=")"/>
-                </span>
+                </div>
               }
             />
             <MathsPunct x="×"/>
-            <MathsItalic x="f`"/>
+            <MathsItalic x="f'"/>
             <MathsPunct x="("/>
             <MathsItalic x="x"/>
             <MathsPunct x=")"/>
             <MathsPunct x="="/>
             <MathsFrac
               x1={
-                <span>
-                  <MathsItalic x="f`"/>
+                <div>
+                  <MathsItalic x="f'"/>
                   <MathsPunct x="("/>
                   <MathsItalic x="x"/>
                   <MathsPunct x=")"/>
-                </span>
+                </div>
               }
               x2={
-                <span>
+                <div>
                   <MathsItalic x="f"/>
                   <MathsPunct x="("/>
                   <MathsItalic x="x"/>
                   <MathsPunct x=")"/>
-                </span>
+                </div>
               }
             />
           </div>
@@ -480,31 +480,31 @@ const FPrimeXDividedByFX = {
             <MathsPunct x=")"/>
             <MathsPunct x="}"/>
             <MathsPunct x="]"/>
-            <MathsNormal x="`"/>
+            <MathsItalic x="'"/>
             <MathsPunct x="="/>
             <MathsFrac
               x1={
-                <span>
-                  <MathsItalic x="f`"/>
+                <div>
+                  <MathsItalic x="f'"/>
                   <MathsPunct x="("/>
                   <MathsItalic x="x"/>
                   <MathsPunct x=")"/>
-                </span>
+                </div>
               }
               x2={
-                <span>
+                <div>
                   <MathsItalic x="f"/>
                   <MathsPunct x="("/>
                   <MathsItalic x="x"/>
                   <MathsPunct x=")"/>
-                </span>
+                </div>
               }
             />
             <MathsNormal x="임을 알 수 있다."/>
           </div>
           <div className="maths-body">
             <MathsNormal x="또,"/>
-            <MathsItalic x="h`"/>
+            <MathsItalic x="h'"/>
             <MathsPunct x="("/>
             <MathsItalic x="x"/>
             <MathsPunct x=")"/>
@@ -517,7 +517,7 @@ const FPrimeXDividedByFX = {
             <MathsNormal x="1"/>
             <MathsPunct x=")"/>
             <MathsPunct x="}"/>
-            <MathsNormal x="`"/>
+            <MathsItalic x="'"/>
             <MathsPunct x="+"/>
             <MathsPunct x="{"/>
             <MathsNormal x="ln"/>
@@ -527,7 +527,7 @@ const FPrimeXDividedByFX = {
             <MathsNormal x="3"/>
             <MathsPunct x=")"/>
             <MathsPunct x="}"/>
-            <MathsNormal x="`"/>
+            <MathsItalic x="'"/>
             <MathsPunct x="+"/>
             <MathsPunct x="{"/>
             <MathsNormal x="ln"/>
@@ -537,42 +537,42 @@ const FPrimeXDividedByFX = {
             <MathsNormal x="5"/>
             <MathsPunct x=")"/>
             <MathsPunct x="}"/>
-            <MathsNormal x="`"/>
+            <MathsItalic x="'"/>
           </div>
           <div className="maths-body">
             <MathsPunct x="="/>
-            <MathsFrac x1={<span><MathsNormal x="1"/></span>} x2={<span><MathsItalic x="x"/><MathsPunct x="-"/><MathsNormal x="1"/></span>}/>
+            <MathsFrac x1={<div><MathsNormal x="1"/></div>} x2={<div><MathsItalic x="x"/><MathsPunct x="-"/><MathsNormal x="1"/></div>}/>
             <MathsPunct x="+"/>
-            <MathsFrac x1={<span><MathsNormal x="1"/></span>} x2={<span><MathsItalic x="x"/><MathsPunct x="-"/><MathsNormal x="3"/></span>}/>
+            <MathsFrac x1={<div><MathsNormal x="1"/></div>} x2={<div><MathsItalic x="x"/><MathsPunct x="-"/><MathsNormal x="3"/></div>}/>
             <MathsPunct x="+"/>
-            <MathsFrac x1={<span><MathsNormal x="1"/></span>} x2={<span><MathsItalic x="x"/><MathsPunct x="-"/><MathsNormal x="5"/></span>}/>
+            <MathsFrac x1={<div><MathsNormal x="1"/></div>} x2={<div><MathsItalic x="x"/><MathsPunct x="-"/><MathsNormal x="5"/></div>}/>
             <MathsNormal x="이므로"/>
           </div>
           <div className="maths-body">
             <MathsFrac
               x1={
-                <span>
-                  <MathsItalic x="f`"/>
+                <div>
+                  <MathsItalic x="f'"/>
                   <MathsPunct x="("/>
                   <MathsItalic x="x"/>
                   <MathsPunct x=")"/>
-                </span>
+                </div>
               }
               x2={
-                <span>
+                <div>
                   <MathsItalic x="f"/>
                   <MathsPunct x="("/>
                   <MathsItalic x="x"/>
                   <MathsPunct x=")"/>
-                </span>
+                </div>
               }
             />
             <MathsPunct x="="/>
-            <MathsFrac x1={<span><MathsNormal x="1"/></span>} x2={<span><MathsItalic x="x"/><MathsPunct x="-"/><MathsNormal x="1"/></span>}/>
+            <MathsFrac x1={<div><MathsNormal x="1"/></div>} x2={<div><MathsItalic x="x"/><MathsPunct x="-"/><MathsNormal x="1"/></div>}/>
             <MathsPunct x="+"/>
-            <MathsFrac x1={<span><MathsNormal x="1"/></span>} x2={<span><MathsItalic x="x"/><MathsPunct x="-"/><MathsNormal x="3"/></span>}/>
+            <MathsFrac x1={<div><MathsNormal x="1"/></div>} x2={<div><MathsItalic x="x"/><MathsPunct x="-"/><MathsNormal x="3"/></div>}/>
             <MathsPunct x="+"/>
-            <MathsFrac x1={<span><MathsNormal x="1"/></span>} x2={<span><MathsItalic x="x"/><MathsPunct x="-"/><MathsNormal x="5"/></span>}/>
+            <MathsFrac x1={<div><MathsNormal x="1"/></div>} x2={<div><MathsItalic x="x"/><MathsPunct x="-"/><MathsNormal x="5"/></div>}/>
             <MathsNormal x="임을 알 수 있다."/>
           </div>
         </div>
