@@ -279,10 +279,20 @@ s {
 }
 
 .codeline {
-	padding: 0px 4px;
+	padding: 4px 4px;
 	background-color: #444;
 	font-family: "d2c";
 	color: #fff;
+}
+
+.table {
+	padding: 8px;
+	border: 2px solid;
+	border-collapse: collapse;
+	border-color: #fff;
+	background-color: #444;
+	color: #fff;
+	text-align: center;
 }
 
 .code-magenta {

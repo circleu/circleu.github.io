@@ -1,6 +1,7 @@
 import React from "react";
+import PageList from "../../../elements/PageList";
 import CategoryPage from "../../../elements/CategoryPage";
-import _64BitOSUsingUEFI from "./64-bit-os-using-uefi/pageData";
+import PCINote from "./pci-note/pageData";
 
 
 const OperatingSystem = {
@@ -9,7 +10,7 @@ const OperatingSystem = {
     dir: "/development/operating-system",
     content: (
       <div>
-        {_64BitOSUsingUEFI.data.content}
+        <PageList pageData={PCINote.data} img={null} />
       </div>
     )
   },

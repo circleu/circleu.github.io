@@ -31,7 +31,7 @@ function Sidebar() {
 
               <FolderIndex name={Pages.OperatingSystem.data.title} link={Pages.OperatingSystem.data.dir} isopen={1} isindent={1} content = {
                 <div>
-                  <LinearIndex name={Pages._64BitOSUsingUEFI.data.title} link={Pages._64BitOSUsingUEFI.data.dir} isindent={1}/>
+                  
                 </div>
               } />
             </div>

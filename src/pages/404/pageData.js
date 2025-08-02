@@ -1,6 +1,5 @@
 import React from "react";
 import Text from "../../elements/Text";
-import { MathsBold, MathsFrac, MathsItalic, MathsNormal, MathsPunct } from "../../elements/Maths";
 
 
 const _404 = {
