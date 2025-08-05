@@ -25,6 +25,7 @@ function App() {
           <Route path={Pages.FPrimeXDividedByFX.data.dir} element={<Pages.FPrimeXDividedByFX.page />}></Route>
           <Route path={Pages.PCINote.data.dir} element={<Pages.PCINote.page />}></Route>
           <Route path={Pages.CFileIO.data.dir} element={<Pages.CFileIO.page />}></Route>
+          <Route path={Pages.DifferentiationAndIntegrationOfCircle.data.dir} element={<Pages.DifferentiationAndIntegrationOfCircle.page/>}/>
         </Routes>
       </BrowserRouter>
     </div>

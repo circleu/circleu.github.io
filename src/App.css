@@ -54,7 +54,7 @@
 }
 @media screen and (max-width: 1280px) {
 	:root {
-		--text-default: 14px
+		--text-default: 16px
 	}
 	#Sidebar-body {
 		position: none;
@@ -78,6 +78,7 @@ body {
 	padding: 0;
 	font-family: "noto-sans";
 	font-size: var(--text-default);
+	font-weight: 500;
 }
 h1 {
 	margin: 0;
@@ -94,6 +95,10 @@ ul {
 }
 s {
 	color: #888;
+}
+img {
+	overflow: scroll;
+	width: 40%;
 }
 
 #Sidebar-body {
@@ -148,7 +153,7 @@ s {
 }
 
 .hyperlink-body {
-	display: table;
+	display: inline-table;
 
 	margin: 0;
 	height: var(--text-double);
@@ -191,7 +196,6 @@ s {
 .maths-frame {
 	background-color: #444;
 	color: #fff;
-	font-family: "cmu-normal", "noto-serif";
 	font-size: var(--text-large);
 	margin: 0;
 	padding: 16px;
@@ -206,6 +210,9 @@ s {
 	vertical-align: middle;
 	text-align: center;
 }
+.maths-line {
+	display: inline-table;
+}
 .maths-power {
 	display: table-cell;
 	vertical-align: middle;
@@ -216,34 +223,50 @@ s {
 	display: table-cell;
 	vertical-align: middle;
 	text-align: center;
-	font-size: var(--text-largest);
 	padding: 0 2px;
+	font-family: "cmu-normal", "noto-serif";
 }
 .maths-paren {
 	display: table-cell;
 	vertical-align: middle;
 	text-align: center;
+	font-family: "cmu-normal", "noto-serif";
 	font-size: calc(var(--text-largest) * 2);
 }
 .maths-frac {
 	display: table-cell;
-	min-width: 32px;
+	margin: 0;
 	padding: 0 2px;
+}
+.maths-sqrt {
+	display: table-cell;
+	vertical-align: middle;
+	border-top: solid 1.5px;
+}
+.maths-int {
+	font-size: var(--text-double);
+}
+.maths-sqrt-symbol {
+	display: table-cell;
+	font-family: "cmu-normal", "noto-serif";
 }
 .maths-italic {
 	font-family: "cmu-italic";
-	font-size: var(--text-largest);
 }
 .maths-bold {
 	font-family: "cmu-bold";
-	font-size: var(--text-larger);
 }
 .maths-normal {
-	font-size: var(--text-larger);
+	font-family: "cmu-normal", "noto-serif";
+}
+.maths-void {
+	display: table-cell;
+	vertical-align: middle;
+	font-size: var(--text-smallest);
 }
 
 .pagelist-body {
-	height: calc(var(--text-double) * 4);
+	height: calc(var(--text-double) * 3);
 	overflow: hidden;
 	color: #222;
 }
@@ -295,6 +318,7 @@ s {
 	background-color: #444;
 	color: #fff;
 	text-align: center;
+	overflow-x: scroll;
 }
 
 .code-magenta {

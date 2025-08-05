@@ -1,6 +1,6 @@
 import React from "react";
 import Text from "../../../elements/Text";
-import {MathsFrac, MathsItalic, MathsNormal, MathsPunct, MathsLim, MathsParen, MathsSup, MathsSub, MathsExpression} from "../../../elements/Maths"
+import {MathsExpression} from "../../../elements/Maths"
 
 
 const FPrimeXDividedByFX = {

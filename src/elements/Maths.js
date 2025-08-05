@@ -1,11 +1,14 @@
 import React from "react"
+import radicalShort from "./radical-symbol.svg"
+import radicalLong from "./radical-symbol-long.svg"
 
 function MathsFrac({x1, x2}) {
   return (
     <div className="maths-element">
       <div className="maths-body">
         <span className="maths-frac">{x1}</span><tr></tr>
-        <hr style={{height:"1px", background:"white", border:"0", margin: "2px 0"}}></hr><tr></tr>
+        <hr style={{height:"1px", backgroundColor:"#fff", border:"0", margin: "0"}}></hr>
+        <hr style={{height:"1px", backgroundColor:"#000", border:"0", margin: "0"}}></hr><tr></tr>
         <span className="maths-frac">{x2}</span>
       </div>
     </div>
@@ -18,25 +21,25 @@ function MathsItalic({x}) {
 }
 function MathsBold({x}) {
   return (
-    <span className="maths-element"><span className="maths-bold">{x}</span></span>
+    <span className="maths-element"><div className="maths-bold">{x}</div></span>
   )
 }
 function MathsNormal({x}) {
   return (
-    <span className="maths-element"><span className="maths-normal" >{x}</span></span>
+    <span className="maths-element"><div className="maths-normal">{x}</div></span>
   );
 }
 function MathsPunct({x}) {
   return (
-    <span className="maths-element"><span className="maths-punct">{x}</span></span>
+    <span className="maths-element"><div className="maths-punct">{x}</div></span>
   );
 }
 function MathsLim({x1, x2}) {
   return (
     <div className="maths-element">
       <div className="maths-body">
-        <MathsNormal x={"lim"} /><tr></tr>
-        <span className="maths-power">{x1}{<MathsPunct x={"→"} />}{x2}</span>
+        <MathsNormal x={"lim"}/><tr></tr>
+        <span className="maths-power">{x1}{<MathsNormal x={"→"} />}{x2}</span>
       </div>
     </div>
   );
@@ -106,7 +109,7 @@ function MathsSup({x}) {
     <div className="maths-element">
       <div className="maths-body">
         <span className="maths-power">{x}</span><tr></tr>
-        <span className="maths-element">&nbsp;</span><tr></tr>
+        <span className="maths-void">&nbsp;</span><tr></tr>
       </div>
     </div>
   )
@@ -116,10 +119,40 @@ function MathsSub({x}) {
     <div className="maths-element">
       <div className="maths-body">
         <span className="maths-void">&nbsp;</span><tr></tr>
-        <span className="maths-element">{x}</span>
+        <span className="maths-power">{x}</span>
       </div>
     </div>
   )
+}
+function MathsSqrt() {
+  return (
+    <span className="maths-element">
+      <div className="maths-sqrt-symbol">√</div>
+    </span>
+  );
+}
+function MathsInt() {
+  return (
+    <span className="maths-element">
+      <span className="maths-punct">
+        <div className="maths-int">{"∫"}</div>
+      </span>
+    </span>
+  );
+}
+/* You MUST use this element if you're gonna use MathsSqrt. */
+function MathsSetting() {
+  let init = 0;
+  let intrv = setInterval(() => {
+    var sqrt = document.getElementsByClassName("maths-sqrt-symbol");
+    for (let i = 0; i < sqrt.length && init === 0; i++) {
+      let parentHeight = sqrt[i].parentElement.parentElement.offsetHeight * 0.86;
+      sqrt[i].style.fontSize = `${parentHeight}px`;
+    }
+    init = 1;
+    if (init)
+      clearInterval(intrv)
+  }, 100);
 }
 function MathsExpression({x}) {
   function isalpha(ch) {
@@ -156,12 +189,10 @@ function MathsExpression({x}) {
         argnum = 1;
       else if (func === '_')
         argnum = 1;
-      else if (func === "left") {
+      else if (func === "left")
         argnum = 1;
-      }
-      else if (func === "right") {
+      else if (func === "right")
         argnum = 1;
-      }
       else if (func === "bf")
         argnum = 1;
       else if (func === "rm")
@@ -177,6 +208,12 @@ function MathsExpression({x}) {
       else if (func === "infty")
         argnum = 0;
       else if (func === "times")
+        argnum = 0;
+      else if (func === "sqrt")
+        argnum = 1;
+      else if (func === "int")
+        argnum = 0;
+      else if (func === "neq")
         argnum = 0;
       else
         argnum = 0;
@@ -200,6 +237,8 @@ function MathsExpression({x}) {
               else continue;
               tmp[j].push(tmpret[1]);
             }
+            else if (token[i] === '~')
+              tmp[j].push(<MathsNormal x={" "}/>);
             else if (isalpha(token[i])) {
               if (func === "bf")
                 tmp[j].push(<MathsBold x={token[i]} />);
@@ -280,6 +319,23 @@ function MathsExpression({x}) {
         result = (
           <MathsPunct x={"×"}/>
         );
+      else if (func === "sqrt")
+        result = (
+          <span className="maths-element">
+              <MathsSqrt/>
+            <div className="maths-element">
+              <span className="maths-sqrt">{tmp[0]}</span>
+            </div>
+          </span>
+        );
+      else if (func === "int")
+        result = (
+          <MathsInt/>
+        );
+      else if (func === "neq")
+        result = (
+          <MathsPunct x={"≠"}/>
+        );
       else
         result = (<span></span>);
     }
@@ -324,4 +380,4 @@ function MathsExpression({x}) {
 
   return (<div className="maths-body">{group}</div>);
 }
-export {MathsFrac, MathsItalic, MathsBold, MathsNormal, MathsPunct, MathsLim, MathsParen, MathsBrace, MathsBracket, MathsSup, MathsSub, MathsExpression};
+export {MathsFrac, MathsItalic, MathsBold, MathsNormal, MathsPunct, MathsLim, MathsParen, MathsBrace, MathsBracket, MathsSup, MathsSub, MathsExpression, MathsSqrt, MathsSetting, MathsInt};

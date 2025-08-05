@@ -11,6 +11,7 @@ import Study from "./pages/study/pageData";
 import FPrimeXDividedByFX from "./pages/study/f-prime-x-divided-by-f-x/pageData";
 import PCINote from "./pages/development/operating-system/pci-note/pageData";
 import CFileIO from "./pages/development/c/c-file-io/pageData";
+import DifferentiationAndIntegrationOfCircle from "./pages/study/differentiation-and-integration-of-circle/pageData";
 
 export {
   Main, 
@@ -25,5 +26,6 @@ export {
   Study,
   FPrimeXDividedByFX, 
   PCINote, 
-  CFileIO
+  CFileIO,
+  DifferentiationAndIntegrationOfCircle
 };

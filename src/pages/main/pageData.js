@@ -20,8 +20,8 @@ const Main = {
         <p>운영체제를 공부 중입니다. 덕분에 C를 열심히 배우고 있습니다.</p>
         
         <h3>외부 링크</h3>
-        <HyperLink img={githubLogo} label="Github" text="https://github.com/circleu" link="https://github.com/circleu"/>
-        <HyperLink img={emailIcon} label="e-mail" text="shanwdev25@gmail.com" link="mailto:shanwdev25@gmail.com" />
+        <p><HyperLink img={githubLogo} label="Github" text="https://github.com/circleu" link="https://github.com/circleu"/></p>
+        <p><HyperLink img={emailIcon} label="e-mail" text="shanwdev25@gmail.com" link="mailto:shanwdev25@gmail.com" /></p>
 
         <h3>Site Info</h3>
         <p>The site is powered by React.js, made by circleu.</p>
