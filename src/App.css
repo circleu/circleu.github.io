@@ -205,37 +205,41 @@ s {
 	display: inline-block;
 	vertical-align: middle;
 	text-align: center;
-	padding: 0 2px;
 }
 .maths-power {
 	display: table-cell;
 	vertical-align: middle;
 	text-align: center;
-	font-size: var(--text-small);
+	font-size: var(--text-small) !important;
 }
 .maths-punct {
 	display: table-cell;
 	vertical-align: middle;
 	text-align: center;
-	padding: 0 2px;
 	font-size: var(--text-largest);
+	padding: 0 2px;
 }
 .maths-paren {
 	display: table-cell;
 	vertical-align: middle;
 	text-align: center;
-	padding: 0 2px;
 	font-size: calc(var(--text-largest) * 2);
 }
 .maths-frac {
 	display: table-cell;
 	min-width: 32px;
+	padding: 0 2px;
 }
 .maths-italic {
 	font-family: "cmu-italic";
+	font-size: var(--text-largest);
 }
 .maths-bold {
 	font-family: "cmu-bold";
+	font-size: var(--text-larger);
+}
+.maths-normal {
+	font-size: var(--text-larger);
 }
 
 .pagelist-body {
