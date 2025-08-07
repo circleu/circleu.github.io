@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.50b8a65e.css",
-    "main.js": "/static/js/main.2a391fdb.js",
+    "main.js": "/static/js/main.a19f8c95.js",
     "static/js/453.209d4f9d.chunk.js": "/static/js/453.209d4f9d.chunk.js",
     "static/media/noto-serif-kr.ttf": "/static/media/noto-serif-kr.d294628559c9d5b8cab1.ttf",
     "static/media/noto-sans-kr.ttf": "/static/media/noto-sans-kr.36802afd186fbb7643b1.ttf",
@@ -15,11 +15,11 @@
     "static/media/radical-symbol-long.svg": "/static/media/radical-symbol-long.b9cc63f1894cb0c0f38c12453c06d07c.svg",
     "static/media/radical-symbol.svg": "/static/media/radical-symbol.49a06e0cf1c7f8c04d39c440b8bfbde8.svg",
     "main.50b8a65e.css.map": "/static/css/main.50b8a65e.css.map",
-    "main.2a391fdb.js.map": "/static/js/main.2a391fdb.js.map",
+    "main.a19f8c95.js.map": "/static/js/main.a19f8c95.js.map",
     "453.209d4f9d.chunk.js.map": "/static/js/453.209d4f9d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.50b8a65e.css",
-    "static/js/main.2a391fdb.js"
+    "static/js/main.a19f8c95.js"
   ]
 }
