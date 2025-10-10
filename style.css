@@ -52,7 +52,7 @@
 }
 @media screen and (max-width: 1280px) {
 	:root {
-		--text-default: 16px
+		--text-default: 14px
 	}
 	#sidebar-frame {
         width: 100%;
