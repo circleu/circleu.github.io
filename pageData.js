@@ -1,6 +1,5 @@
 import pageLayout from "./elements/pageLayout.js";
 import hyperlink from "./elements/hyperlink.js";
-import maths from "./elements/maths.js";
 
 
 const title = "처음 화면";

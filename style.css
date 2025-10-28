@@ -200,25 +200,64 @@ hr {
 
 .maths-frame {
     display: inline-block;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+    text-align: center;
 }
 .maths-element {
-    display: inline-block;
-    text-align: center;
-    margin: 0 1px;
+    margin: 0;
+    padding: 0;
+    line-height: var(--text-smallest);
+    vertical-align: middle;
 }
-.maths-element-small {
+.maths-sup {
+}
+.maths-sub {
+}
+.maths-int {
+    font-family: "cmu-roman", "noto-serif";
+    font-size: var(--text-largest);
+}
+.maths-frame-sqrt {
     display: inline-block;
     margin: 0;
-    font-size: var(--text-smaller);
+    padding: 0;
 }
-.maths-font-roman {
+.maths-sqrt {
+    display: inline-block;
+    font-family: "cmu-roman", "noto-serif";
+    vertical-align: bottom;
+}
+.maths-element-sqrt {
+    margin: 0;
+    padding: 0;
+    line-height: var(--text-smallest);
+    vertical-align: middle;
+    text-decoration-line: overline;
+}
+.maths-small {
+    font-size: var(--text-small);
+}
+.maths-italic {
+    font-family: "cmu-italic";
+}
+.maths-punct {
+    font-family: "cmu-roman", "noto-serif";
+    margin: 2px;
+    vertical-align: middle;
+}
+.maths-roman {
     font-family: "cmu-roman", "noto-serif";
 }
-.maths-font-roman-bold {
+.maths-roman-bold {
     font-family: "cmu-roman-bold";
 }
-.maths-font-italic {
-    font-family: "cmu-italic";
+.maths-paren {
+    font-family: "cmu-roman", "noto-serif";
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
 }
 
 .codeblock-frame {

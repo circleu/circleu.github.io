@@ -1,12 +1,12 @@
 import pageLayout from "../../elements/pageLayout.js";
-import f_prime_x_divided_by_f_x from "./f-prime-x-divided-by-f-x/pageData.js"
+import testpage from "./testpage/pageData.js"
 
 
 const pageList = [
-    f_prime_x_divided_by_f_x.name
+testpage.name
 ];
 const pageDataList = [
-    f_prime_x_divided_by_f_x  
+testpage
 ];
 const currentDirectory = "/pages/study/";
 const category = "공부";

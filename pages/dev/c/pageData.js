@@ -1,12 +1,9 @@
 import pageLayout from "../../../elements/pageLayout.js";
-import c_highlighter from "./c-highlighter/pageData.js"
 
 
 const pageList = [
-    c_highlighter.name
 ];
 const pageDataList = [
-    c_highlighter
 ];
 const currentDirectory = "/pages/dev/c/";
 const category = "C";
