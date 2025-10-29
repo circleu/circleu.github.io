@@ -13,7 +13,17 @@ function mathsRomanBold(x) {
         `<span class="maths-element"><span class="maths-roman-bold">${x}</span></span>`
     );
 }
+function mathsRomanBlackboard(x) {
+    return (
+        `<span class="maths-element"><span class="maths-roman-blackboard">${x}</span></span>`
+    );
+}
 function mathsPunct(x) {
+    switch (x) {
+        case "&": x = "&amp;"; break;
+        case "\'": x = "&apos;"; break;
+    }
+    
     return (
         `<span class="maths-element"><span class="maths-punct">${x}</span></span>`
     );
@@ -35,7 +45,7 @@ function mathsSub(x) {
 }
 function mathsFrac(x, y) {
     return (
-        `<span class="maths-frame">
+        `<span class="maths-frac">
             <div class="maths-element">${x}</div>
             <hr style="background-color: #fff; margin-top: 4px;">
             <hr style="background-color: #000;">
@@ -54,9 +64,10 @@ function mathsSqrt(x) {
         </span>`
     )
 }
+// <span class="maths-sqrt">√</span>
 function mathsOverset(x, y) {
     return (
-        `<span class="maths-frame">
+        `<span class="maths-tripleset">
             <div class="maths-element">${x}</div>
             <div class="maths-element">${y}</div>
             <div class="maths-element">${mathsRoman("&nbsp;")}</div>
@@ -65,10 +76,19 @@ function mathsOverset(x, y) {
 }
 function mathsUnderset(x, y) {
     return (
-        `<span class="maths-frame">
+        `<span class="maths-tripleset">
             <div class="maths-element">${mathsRoman("&nbsp;")}</div>
             <div class="maths-element">${y}</div>
             <div class="maths-element">${x}</div>
+        </span>`
+    );
+}
+function mathsTripleset(x, y, z) {
+    return (
+        `<span class="maths-tripleset">
+            <div class="maths-element">${x}</div>
+            <div class="maths-element">${y}</div>
+            <div class="maths-element">${z}</div>
         </span>`
     );
 }
@@ -105,7 +125,7 @@ function mathsConvert(str) {
             ret = mathsRoman("&nbsp;");
         }
         else if (token[index] == '\'') {
-            ret = mathsItalic("&nbsp;");
+            ret = mathsItalic("&apos;");
         }
         else if (isalpha(token[index])) {
             if (func == "rm") {
@@ -113,6 +133,9 @@ function mathsConvert(str) {
             }
             else if (func == "bf") {
                 ret = mathsRomanBold(token[index]);
+            }
+            else if (func == "mathbb") {
+                ret = mathsRomanBlackboard(token[index]);
             }
             else {
                 ret = mathsItalic(token[index]);
@@ -133,11 +156,107 @@ function mathsConvert(str) {
 
         return ret;
     }
-    function convertFunction(token, index) {
+    function convertEnvironment(isbegin, token, index) {
         let argnum = 0;
         let func = "";
         let brace = 0;
         let args = ["", ""];
+        let ret = ["", 0];
+
+        index++;
+        func = token[index];
+        index++;
+        index++;
+
+        switch (func) {
+            case "matrix": argnum = 0; break;
+
+            default: argnum = 0; break;
+        }
+
+        if (isbegin) {
+            for (let i = 0; i < argnum; i++) {
+                if (token[index] == "{") { index++; brace++;
+                    for (;; index++) {
+                        if (token[index] == "{") {
+                            brace++;
+                        }
+                        else if (token[index] == "}") {
+                            brace--;
+                        }
+
+                        if (brace == 0) {
+                            break;
+                        }
+
+                        else if (token[index] == "\\" || token[index] == "^" || token[index] == "_") {
+                            let tmp = convertFunction(token, index);
+
+                            index = tmp[1];
+                            args[i] += tmp[0];
+                        }
+                        else {
+                            args[i] += convertLetter(func, token, index);
+                        }
+                    } index++;
+                }
+            }
+
+            switch (func) {
+                case "matrix": {
+                    let matrix = "";
+                    let row = "";
+                    let column = "";
+
+                    for (;; index++) {
+                        let tmp = convertFunction(token, index);
+                        index = tmp[1];
+
+                        if (tmp[0] == mathsPunct("&")) {
+                            row += `<td>${column}</td>`;
+                            column = "";
+                        }
+                        else if (tmp[0] == "<br>") {
+                            row += `<td>${column}</td>`;
+                            column = "";
+                            matrix += `<tr>${row}</tr>`;
+                            row = "";
+                        }
+                        else if (tmp[0] == func) {
+                            row += `<td>${column}</td>`;
+                            column = "";
+                            matrix += `<tr>${row}</tr>`;
+                            row = "";
+                            index++;
+                            break;
+                        }
+                        else {
+                            column += tmp[0];
+                        }
+                    }
+
+                    ret[0] = `<table class="maths-matrix">${matrix}</table>`;
+                    ret[1] = index;
+
+                    break;
+                }
+                default: break;
+            }
+
+            return ret;
+        }
+        else {
+            ret[0] = func;
+            ret[1] = index;
+
+            return ret;
+        }
+    }
+    function convertFunction(token, index) {
+        let argnum = 0;
+        let func = "";
+        let brace = 0;
+        let args = ["", "", ""];
         let ret = ["", 0];
 
         if (token[index] == "\\" || token[index] == "^" || token[index] == "_") {
@@ -156,13 +275,20 @@ function mathsConvert(str) {
                 case "pi": argnum = 0; break;
                 case "sigma": argnum = 0; break;
                 case "mu": argnum = 0; break;
-                case "left": argnum = 0; if (token[index] == "(" || token[index] == "[" || token[index] == "{") index++; break;
-                case "right": argnum = 0; if (token[index] == ")" || token[index] == "]" || token[index] == "}") index++; break;
+                case "left": argnum = 0; if (token[index] == "(" || token[index] == "[") index++; break;
+                case "right": argnum = 0; if (token[index] == ")" || token[index] == "]") index++; break;
+                case "{": argnum = 0; break;
+                case "}": argnum = 0; break;
                 case "infty": argnum = 0; break;
                 case "cdot": argnum = 0; break;
                 case "cdots": argnum = 0; break;
+                case "in": argnum = 0; break;
+                case "\\": argnum = 0; break;
+                case "vdots": argnum = 0; break;
 
                 case "rm": argnum = 1; break;
+                case "bf": argnum = 1; break;
+                case "mathbb": argnum = 1; break;
                 case "^": argnum = 1; break;
                 case "_": argnum = 1; break;
                 case "small": argnum = 1; break;
@@ -171,6 +297,23 @@ function mathsConvert(str) {
                 case "overset": argnum = 2; break;
                 case "underset": argnum = 2; break;
                 case "frac": argnum = 2; break;
+
+                case "tripleset": argnum = 3; break;
+
+                case "begin": {
+                    let tmp = convertEnvironment(true, token, index);
+                    args[0] = tmp[0];
+                    index = tmp[1];
+                    argnum = 0;
+                    break;
+                }
+                case "end": {
+                    let tmp = convertEnvironment(false, token, index);
+                    args[0] = tmp[0];
+                    index = tmp[1];
+                    argnum = 0;
+                    break;
+                }
 
                 default: argnum = 0; break;
             }
@@ -189,7 +332,7 @@ function mathsConvert(str) {
                             break;
                         }
 
-                        if (token[index] == "\\" || token[index] == "^" || token[index] == "_") {
+                        else if (token[index] == "\\" || token[index] == "^" || token[index] == "_") {
                             let tmp = convertFunction(token, index);
 
                             index = tmp[1];
@@ -212,19 +355,30 @@ function mathsConvert(str) {
                 case "mu": ret[0] += mathsItalic("μ"); break;
                 case "left": ret[0] += mathsParen(token[index]); break;
                 case "right": ret[0] += mathsParen(token[index]); break;
+                case "{": ret[0] += mathsParen("{"); break;
+                case "}": ret[0] += mathsParen("}"); break;
                 case "infty": ret[0] += mathsRoman("∞"); break;
-                case "cdot": ret[0] += mathsRoman("⋅"); break;
-                case "cdots": ret[0] += mathsRoman("⋅⋅⋅"); break;
+                case "cdot": ret[0] += mathsPunct("⋅"); break;
+                case "cdots": ret[0] += mathsPunct("⋅⋅⋅"); break;
+                case "in": ret[0] += mathsPunct("⋹"); break;
+                case "\\": ret[0] += "<br>"; break;
+                case "vdots": ret[0] += mathsTripleset(mathsPunct("⋅"), mathsPunct("⋅"), mathsPunct("⋅")); break;
 
                 case "rm": ret[0] += args[0]; break;
+                case "bf": ret[0] += args[0]; break;
+                case "mathbb": ret[0] += args[0]; break;
                 case "^": ret[0] += mathsSup(args[0]); break;
                 case "_": ret[0] += mathsSub(args[0]); break;
                 case "small": ret[0] += mathsSmall(args[0]); break;
                 case "sqrt": ret[0] += mathsSqrt(args[0]); break;
+                case "begin": ret[0] += args[0]; break;
+                case "end": ret[0] += args[0]; break;
 
                 case "overset": ret[0] += mathsOverset(args[0], args[1]); break;
                 case "underset": ret[0] += mathsUnderset(args[0], args[1]); break;
                 case "frac": ret[0] += mathsFrac(args[0], args[1]); break;
+
+                case "tripleset": ret[0] += mathsTripleset(args[0], args[1], args[2]); break;
 
                 default: ret[0] += ""
             }
@@ -271,13 +425,18 @@ function mathsSetting() {
     let intrv = setInterval(() => {
         var sqrt = document.getElementsByClassName("maths-sqrt");
         var paren = document.getElementsByClassName("maths-paren");
+        var int = document.getElementsByClassName("maths-int");
         for (let i = 0; i < sqrt.length && init === 0; i++) {
-            let parentHeight = sqrt[i].parentElement.parentElement.offsetHeight * 1.3;
+            let parentHeight = sqrt[i].parentElement.parentElement.offsetHeight * 0.9;
             sqrt[i].style.fontSize = `${parentHeight}px`;
         }
         for (let i = 0; i < paren.length && init === 0; i++) {
-            let parentHeight = paren[i].parentElement.parentElement.offsetHeight * 1;
+            let parentHeight = paren[i].parentElement.parentElement.offsetHeight * 0.9;
             paren[i].style.fontSize = `${parentHeight}px`;
+        }
+        for (let i = 0; i < int.length && init === 0; i++) {
+            let parentHeight = int[i].parentElement.parentElement.offsetHeight * 0.9;
+            int[i].style.fontSize = `${parentHeight}px`;
         }
         init = 1;
         if (init)

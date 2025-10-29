@@ -18,20 +18,37 @@
 	src: url(/fonts/noto-serif-kr.ttf);
 }
 @font-face {
+	font-family: "noto-serif-bold";
+	src: url(/fonts/noto-serif-kr-bold.ttf);
+}
+@font-face {
 	font-family: "d2c";
 	src: url(/fonts/D2Coding.ttf);
 }
 @font-face {
-	font-family: "cmu-roman";
-	src: url(/fonts/cmu-roman-mod.ttf)
+    font-family: "latin-modern-italic";
+    src: url(/fonts/latin-modern-math-italic.otf);
+    font-weight: 300;
 }
 @font-face {
-	font-family: "cmu-roman-bold";
-	src: url(/fonts/cmu-roman-bold.ttf)
+    font-family: "latin-modern-italic-bold";
+    src: url(/fonts/latin-modern-math-italic-bold.otf);
+    font-weight: bold;
 }
 @font-face {
-	font-family: "cmu-italic";
-	src: url(/fonts/cmu-roman-italic.ttf);
+    font-family: "latin-modern-roman";
+    src: url(/fonts/latin-modern-math-roman.otf);
+    font-weight: 300;
+}
+@font-face {
+    font-family: "latin-modern-roman-blackboard";
+    src: url(/fonts/latin-modern-math-roman-blackboard.otf);
+    font-weight: bold;
+}
+@font-face {
+    font-family: "latin-modern-roman-bold";
+    src: url(/fonts/latin-modern-math-roman-bold.otf);
+    font-weight: bold;
 }
 
 @media screen and (min-width: 1280px) {
@@ -203,7 +220,6 @@ hr {
     margin: 0;
     padding: 0;
     vertical-align: middle;
-    text-align: center;
 }
 .maths-element {
     margin: 0;
@@ -216,8 +232,8 @@ hr {
 .maths-sub {
 }
 .maths-int {
-    font-family: "cmu-roman", "noto-serif";
-    font-size: var(--text-largest);
+    font-family: "latin-modern-roman";
+    vertical-align: middle;
 }
 .maths-frame-sqrt {
     display: inline-block;
@@ -225,9 +241,11 @@ hr {
     padding: 0;
 }
 .maths-sqrt {
-    display: inline-block;
-    font-family: "cmu-roman", "noto-serif";
-    vertical-align: bottom;
+    font-family: "latin-modern-roman";
+    position: relative;
+    margin: 0;
+    padding: 0;
+    bottom: 0.6em;
 }
 .maths-element-sqrt {
     margin: 0;
@@ -236,27 +254,53 @@ hr {
     vertical-align: middle;
     text-decoration-line: overline;
 }
+.maths-tripleset {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+    text-align: center;
+}
+.maths-frac {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 0.875em;
+}
 .maths-small {
     font-size: var(--text-small);
 }
 .maths-italic {
-    font-family: "cmu-italic";
+    font-family: "latin-modern-italic";
 }
 .maths-punct {
-    font-family: "cmu-roman", "noto-serif";
+    font-family: "latin-modern-roman";
     margin: 2px;
     vertical-align: middle;
 }
 .maths-roman {
-    font-family: "cmu-roman", "noto-serif";
+    font-family: "latin-modern-roman", "noto-serif";
 }
 .maths-roman-bold {
-    font-family: "cmu-roman-bold";
+    font-family: "latin-modern-roman-bold", "noto-serif-bold";
+}
+.maths-roman-blackboard {
+    font-family: "latin-modern-roman-blackboard";
 }
 .maths-paren {
-    font-family: "cmu-roman", "noto-serif";
+    font-family: "latin-modern-roman";
     margin: 0;
     padding: 0;
+    vertical-align: middle;
+}
+.maths-matrix {
+    display: inline-table;
+    margin: 0;
+    padding: 0;
+    border-collapse: collapse;
+    text-align: center;
     vertical-align: middle;
 }
 
