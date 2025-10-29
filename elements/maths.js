@@ -360,7 +360,7 @@ function mathsConvert(str) {
                 case "infty": ret[0] += mathsRoman("∞"); break;
                 case "cdot": ret[0] += mathsPunct("⋅"); break;
                 case "cdots": ret[0] += mathsPunct("⋅⋅⋅"); break;
-                case "in": ret[0] += mathsPunct("⋹"); break;
+                case "in": ret[0] += mathsPunct("∈"); break;
                 case "\\": ret[0] += "<br>"; break;
                 case "vdots": ret[0] += mathsTripleset(mathsPunct("⋅"), mathsPunct("⋅"), mathsPunct("⋅")); break;
 
