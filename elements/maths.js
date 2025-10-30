@@ -22,6 +22,7 @@ function mathsPunct(x) {
     switch (x) {
         case "&": x = "&amp;"; break;
         case "\'": x = "&apos;"; break;
+        case "-": x = "−"; break;
     }
     
     return (
@@ -64,31 +65,22 @@ function mathsSqrt(x) {
         </span>`
     )
 }
-// <span class="maths-sqrt">√</span>
+// You should use mathsUnderset first then mathsOverset.
+// I don't know why but alignment gets weird when do the opposite.
+//     mathsOverset(a, mathsUnderset(c, b))
 function mathsOverset(x, y) {
     return (
-        `<span class="maths-tripleset">
+        `<span class="maths-frame-set">
             <div class="maths-element">${x}</div>
-            <div class="maths-element">${y}</div>
-            <div class="maths-element">${mathsRoman("&nbsp;")}</div>
+            <span class="maths-element">${y}</span>
         </span>`
     );
 }
 function mathsUnderset(x, y) {
     return (
-        `<span class="maths-tripleset">
-            <div class="maths-element">${mathsRoman("&nbsp;")}</div>
+        `<span class="maths-frame-set">
             <div class="maths-element">${y}</div>
-            <div class="maths-element">${x}</div>
-        </span>`
-    );
-}
-function mathsTripleset(x, y, z) {
-    return (
-        `<span class="maths-tripleset">
-            <div class="maths-element">${x}</div>
-            <div class="maths-element">${y}</div>
-            <div class="maths-element">${z}</div>
+            <span class="maths-element">${x}</span>
         </span>`
     );
 }
@@ -285,6 +277,8 @@ function mathsConvert(str) {
                 case "in": argnum = 0; break;
                 case "\\": argnum = 0; break;
                 case "vdots": argnum = 0; break;
+                case "sum": argnum = 0; break;
+                case "ddots": argnum = 0; break;
 
                 case "rm": argnum = 1; break;
                 case "bf": argnum = 1; break;
@@ -297,8 +291,6 @@ function mathsConvert(str) {
                 case "overset": argnum = 2; break;
                 case "underset": argnum = 2; break;
                 case "frac": argnum = 2; break;
-
-                case "tripleset": argnum = 3; break;
 
                 case "begin": {
                     let tmp = convertEnvironment(true, token, index);
@@ -362,7 +354,9 @@ function mathsConvert(str) {
                 case "cdots": ret[0] += mathsPunct("⋅⋅⋅"); break;
                 case "in": ret[0] += mathsPunct("∈"); break;
                 case "\\": ret[0] += "<br>"; break;
-                case "vdots": ret[0] += mathsTripleset(mathsPunct("⋅"), mathsPunct("⋅"), mathsPunct("⋅")); break;
+                case "vdots": ret[0] += mathsPunct("⋮"); break;
+                case "sum": ret[0] += mathsPunct("∑"); break;
+                case "ddots": ret[0] += mathsPunct("⋱"); break;
 
                 case "rm": ret[0] += args[0]; break;
                 case "bf": ret[0] += args[0]; break;
@@ -377,8 +371,6 @@ function mathsConvert(str) {
                 case "overset": ret[0] += mathsOverset(args[0], args[1]); break;
                 case "underset": ret[0] += mathsUnderset(args[0], args[1]); break;
                 case "frac": ret[0] += mathsFrac(args[0], args[1]); break;
-
-                case "tripleset": ret[0] += mathsTripleset(args[0], args[1], args[2]); break;
 
                 default: ret[0] += ""
             }

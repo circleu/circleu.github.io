@@ -228,8 +228,10 @@ hr {
     vertical-align: middle;
 }
 .maths-sup {
+    font-size: 0.75em;
 }
 .maths-sub {
+    font-size: 0.75em;
 }
 .maths-int {
     font-family: "latin-modern-roman";
@@ -239,6 +241,7 @@ hr {
     display: inline-block;
     margin: 0;
     padding: 0;
+    vertical-align: middle;
 }
 .maths-sqrt {
     font-family: "latin-modern-roman";
@@ -254,7 +257,7 @@ hr {
     vertical-align: middle;
     text-decoration-line: overline;
 }
-.maths-tripleset {
+.maths-frame-set {
     display: inline-block;
     margin: 0;
     padding: 0;
@@ -267,7 +270,6 @@ hr {
     padding: 0;
     vertical-align: middle;
     text-align: center;
-    font-size: 0.875em;
 }
 .maths-small {
     font-size: var(--text-small);
@@ -299,9 +301,10 @@ hr {
     display: inline-table;
     margin: 0;
     padding: 0;
-    border-collapse: collapse;
+    border-collapse: separate;
     text-align: center;
     vertical-align: middle;
+    border-spacing: 4px;
 }
 
 .codeblock-frame {
